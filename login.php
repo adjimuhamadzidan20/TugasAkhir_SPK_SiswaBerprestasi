@@ -65,7 +65,7 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <a href="index.html" class="btn btn-success btn-user btn-block rounded-0">
+                                        <a href="index.html" class="btn btn-primary btn-user btn-block rounded-0">
                                             Masuk
                                         </a>
                                         <hr>
