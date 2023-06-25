@@ -57,15 +57,15 @@
         <form action="" method="post">
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Sub Kriteria</label>
-              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="sub_kriteria">
+              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="sub_kriteria" required>
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Keterangan</label>
-              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="ket">
+              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="ket" required>
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Nilai</label>
-              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="nilai">
+              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="nilai" required>
             </div>
             <button type="submit" class="btn btn-success btn-square rounded-0" name="simpan">
                 Simpan

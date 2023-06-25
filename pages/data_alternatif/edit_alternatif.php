@@ -35,15 +35,15 @@
         <form action="" method="post">
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">NISN</label>
-              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="nisn" value="<?= $data['NISN']; ?>">
+              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="nisn" value="<?= $data['NISN']; ?>" required>
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Nama Siswa</label>
-              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="nama_siswa" value="<?= $data['Nama_Siswa']; ?>">
+              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="nama_siswa" value="<?= $data['Nama_Siswa']; ?>" required>
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">JK</label>
-              <select class="form-control rounded-0" aria-label="Default select example" name="jenis_kelamin">
+              <select class="form-control rounded-0" aria-label="Default select example" name="jenis_kelamin" required>
                   <option selected value="<?= $data['JK']; ?>" class="bg-secondary text-white"><?= $data['JK']; ?></option>
                   <option value="L">L</option>
                   <option value="P">P</option>
@@ -51,7 +51,7 @@
             </div>
             <div class="mb-4">
               <label for="exampleFormControlInput1" class="form-label">Kelas</label>
-              <select class="form-control rounded-0" aria-label="Default select example" name="kelas">
+              <select class="form-control rounded-0" aria-label="Default select example" name="kelas" required>
                   <option selected value="<?= $data['Kelas']; ?>" class="bg-secondary text-white"><?= $data['Kelas']; ?></option>
                   <option value="X DKV 1">X DKV 1</option>
                   <option value="X DKV 2">X DKV 2</option>

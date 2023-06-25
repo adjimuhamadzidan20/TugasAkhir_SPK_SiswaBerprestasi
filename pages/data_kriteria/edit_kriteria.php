@@ -34,15 +34,15 @@
         <form action="" method="post">
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Nama Kriteria</label>
-              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="nama_kriteria" value="<?= $data['Nama_Kriteria']; ?>">
+              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="nama_kriteria" value="<?= $data['Nama_Kriteria']; ?>" required>
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Nilai Bobot</label>
-              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="bobot" value="<?= $data['Nilai_Bobot']; ?>">
+              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="bobot" value="<?= $data['Nilai_Bobot']; ?>" required>
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Atribut</label>
-              <select class="form-control rounded-0" aria-label="Default select example" name="atribut">
+              <select class="form-control rounded-0" aria-label="Default select example" name="atribut" required>
                   <option selected value="<?= $data['Atribut']; ?>" class="bg-secondary text-white"><?= $data['Atribut']; ?></option>
                   <option value="Benefit">Benefit</option>
                   <option value="Cost">Cost</option>

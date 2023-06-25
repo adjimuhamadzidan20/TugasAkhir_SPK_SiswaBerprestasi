@@ -48,17 +48,17 @@
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Sub Kriteria</label>
               <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="sub_kriteria" 
-              value="<?= $dataSub['Nama_Subkriteria']; ?>">
+              value="<?= $dataSub['Nama_Subkriteria']; ?>" required>
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Keterangan</label>
               <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="ket" 
-              value="<?= $dataSub['Keterangan']; ?>">
+              value="<?= $dataSub['Keterangan']; ?>" required>
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Nilai</label>
               <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="nilai"
-              value="<?= $dataSub['Nilai']; ?>">
+              value="<?= $dataSub['Nilai']; ?>" required>
             </div>
             <button type="submit" class="btn btn-success btn-square rounded-0" name="edit">
                 Edit

@@ -123,6 +123,22 @@
                 </div>
             </li>
 
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages4"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Informasi Lain</span>
+                </a>
+                <div id="collapsePages4" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded-0">
+                        <h6 class="collapse-header">Informasi</h6>
+                        <a class="collapse-item" href="index.php?page=tentang">Tentang SPK</a>
+                        <a class="collapse-item" href="index.php?page=penggunaan">Cara Penggunaan</a>
+                    </div>
+                </div>
+            </li>
+
             <!-- Nav Item - Charts -->
             <!-- <li class="nav-item">
                 <a class="nav-link" href="charts.html">

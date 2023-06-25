@@ -72,7 +72,7 @@
                 ?>
                     <div class="mb-4">
                       <label for="exampleFormControlInput1" class="form-label"><?= $krit['Nama_Kriteria']; ?></label>
-                        <select class="form-control rounded-0" aria-label="Default select example" name="nilai[]">
+                        <select class="form-control rounded-0" aria-label="Default select example" name="nilai[]" required>
                           <?php 
                             $sub = "SELECT data_subkriteria.ID_Sub, data_kriteria.ID_Kriteria, data_kriteria.Nama_Kriteria, 
                             data_subkriteria.Nama_Subkriteria, data_subkriteria.Keterangan, data_subkriteria.Nilai FROM 

@@ -68,7 +68,18 @@
 		// halaman perankingan 
 		else if ($pages === 'perankingan') {
 			include 'pages/peringkat/perankingan.php';
-		} 
+		}
+
+		// halaman tentang spk
+		else if ($pages === 'tentang') {
+			include 'pages/informasi_lain/tentang_spk.php';
+		}
+
+		// halaman cara penggunaan
+		else if ($pages === 'penggunaan') {
+			include 'pages/informasi_lain/cara_penggunaan.php';
+		}
+
 	} else {
 		include 'pages/dashboard/dashboard.php';
 	}

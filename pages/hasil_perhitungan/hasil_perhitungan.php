@@ -6,6 +6,15 @@
 	hasil_preferensi.hasil_pref FROM hasil_preferensi INNER JOIN data_alternatif ON 
 	hasil_preferensi.ID_Alter = data_alternatif.ID_Alter");
 
+	if (isset($_POST['reset'])) {
+		$tabNorm = mysqli_query($koneksi_db, "TRUNCATE TABLE hasil_normalisasi");
+		$tabPref = mysqli_query($koneksi_db, "TRUNCATE TABLE hasil_preferensi");
+
+		echo '<script>
+            document.location.href = "index.php?page=hasil_perhitungan";
+          </script>';
+	}
+
 ?>
 
 <!-- Page Heading -->
@@ -17,6 +26,9 @@ menenntukan siswa berprestasi serta nilai bobot untuk menandakan seberapa pentin
 <div class="card shadow mb-4 rounded-0">
     <div class="card-header py-3 d-flex align-items-center justify-content-between">
         <h6 class="m-0 font-weight-bold text-primary">Hasil Normalisasi</h6>
+        <a href="index.php?page=tambah_alter" class="btn btn-primary btn-square btn-sm rounded-0">
+           Buat Laporan
+        </a>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -61,6 +73,9 @@ menenntukan siswa berprestasi serta nilai bobot untuk menandakan seberapa pentin
 <div class="card shadow mb-4 rounded-0">
     <div class="card-header py-3 d-flex align-items-center justify-content-between">
         <h6 class="m-0 font-weight-bold text-primary">Hasil Preferensi</h6>
+        <a href="index.php?page=tambah_alter" class="btn btn-primary btn-square btn-sm rounded-0">
+           Buat Laporan
+        </a>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -86,6 +101,13 @@ menenntukan siswa berprestasi serta nilai bobot untuk menandakan seberapa pentin
                   	<?php endwhile; ?>
                 </tbody>
             </table>
+        </div>
+        <div class="d-flex justify-content-end">
+        	<form action="" method="post">
+        		<button type="submit" class="btn btn-success btn-square rounded-0" name="reset" onclick="return confirm('Reset hasil perhitungan?');">
+	          	Reset Hasil
+	        	</button>
+        	</form> 	
         </div>
     </div>
 </div>
