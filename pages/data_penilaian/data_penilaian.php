@@ -21,7 +21,7 @@
 	                    <td>". $alter['Nilai']."</td>
 	                  </tr>";
 	              	endwhile;  
-              $tabel .="</tbody>";
+    $tabel .="</tbody>";
   }
 
 ?>
@@ -36,51 +36,51 @@ menenntukan siswa berprestasi.</p> -->
 	<div class="col-8">
 		<div class="card shadow mb-4 rounded-0">
 	    <div class="card-header py-3 d-flex align-items-center justify-content-between">
-	    		<!-- <a href="index.php" class="btn btn-primary btn-square btn-sm">
-	           Tambah Data
-	        </a> -->
-	        <h6 class="m-0 font-weight-bold text-primary">Tabel Data Alternatif Siswa</h6>
+    		<!-- <a href="index.php" class="btn btn-primary btn-square btn-sm">
+           Tambah Data
+        </a> -->
+        <h6 class="m-0 font-weight-bold text-primary">Tabel Data Alternatif Siswa</h6>
 	    </div>
 	    <div class="card-body">
-	        <div class="table-responsive">
-	            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-	                <thead>
-	                    <tr>
-	                        <th>Kode</th>
-	                        <th>Nama Siswa</th>
-	                        <th>Penilaian</th>
-	                        <th>Opsi</th>
-	                    </tr>
-	                </thead>
-	                <tbody>
-	              		<?php 
-	              			$no = 0;
-	              			while ($alter = mysqli_fetch_assoc($siswa)) :
-	              			$no++;	
-	              		?>
-	                    <tr>
-	                      <td><?= 'A'. $no; ?></td>
-	                      <td><?= $alter['Nama_Siswa']; ?></td>
-	                      <td class="text-center">
-	                        	<a href="index.php?page=tambah_penilaian&penilaian=<?= $alter['ID_Alter']; ?>" class="btn btn-success btn-square rounded-0" title="Tambah Penilaian">
-	                              Masukan Penilaian
-	                          </a>
-	                          <a href="index.php?page=data_penilaian&cek=<?= $alter['Nama_Siswa']; ?>" class="btn btn-success btn-square rounded-0" title="Lihat Penilaian">
-	                          	<i class="fas fa-eye"></i>
-	                          </a>
-	                        </td>
-	                      <td class="text-center">
-	                      	<a href="index.php?page=edit_penilaian&edit=<?= $alter['Nama_Siswa']; ?>&id=<?= $alter['ID_Alter']; ?>" class="btn btn-warning btn-square rounded-0" title="Edit Penilaian">
-	                            <i class="fas fa-edit"></i>
-	                        </a>
-	                      </td>
-	                    </tr>
-	                	<?php 
-	                		endwhile; 
-	                	?>  
-	                </tbody>
-	            </table>
-	        </div>
+        <div class="table-responsive">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+              <tr>
+                <th>Kode</th>
+                <th>Nama Siswa</th>
+                <th>Penilaian</th>
+                <th>Opsi</th>
+              </tr>
+            </thead>
+            <tbody>
+          		<?php 
+          			$no = 0;
+          			while ($alter = mysqli_fetch_assoc($siswa)) :
+          			$no++;	
+          		?>
+                <tr>
+                  <td><?= 'A'. $no; ?></td>
+                  <td><?= $alter['Nama_Siswa']; ?></td>
+                  <td class="text-center">
+                  	<a href="index.php?page=tambah_penilaian&penilaian=<?= $alter['ID_Alter']; ?>" class="btn btn-success btn-square rounded-0" title="Tambah Penilaian">
+                        Masukan Penilaian
+                    </a>
+                    <a href="index.php?page=data_penilaian&cek=<?= $alter['Nama_Siswa']; ?>" class="btn btn-success btn-square rounded-0" title="Lihat Penilaian">
+                    	<i class="fas fa-eye"></i>
+                    </a>
+                  </td>
+                  <td class="text-center">
+                  	<a href="index.php?page=edit_penilaian&edit=<?= $alter['Nama_Siswa']; ?>&id=<?= $alter['ID_Alter']; ?>" class="btn btn-warning btn-square rounded-0" title="Edit Penilaian">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                  </td>
+                </tr>
+            	<?php 
+            		endwhile; 
+            	?>  
+            </tbody>
+          </table>
+        </div>
 	    </div>
 		</div>
 	</div>
