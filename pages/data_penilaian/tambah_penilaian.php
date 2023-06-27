@@ -92,12 +92,12 @@
                 $i++;
                 endwhile; 
             ?>
-            <button type="submit" class="btn btn-success btn-square rounded-0" name="simpan">
-                Simpan
-            </button>
             <a href="index.php?page=data_penilaian" class="btn btn-success btn-square rounded-0">
                 Kembali
             </a>
+            <button type="submit" class="btn btn-success btn-square rounded-0" name="simpan">
+                Simpan
+            </button>
         </form>
     </div>
 </div>

@@ -82,12 +82,12 @@
                   <option value="XII SIJA 3">XII SIJA 3</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-success btn-square rounded-0" name="edit">
-                Edit
-            </button>
             <a href="index.php?page=data_siswa" class="btn btn-success btn-square rounded-0">
                 Kembali
             </a>
+            <button type="submit" class="btn btn-success btn-square rounded-0" name="edit">
+                Edit
+            </button>
         </form>
     </div>
 </div>

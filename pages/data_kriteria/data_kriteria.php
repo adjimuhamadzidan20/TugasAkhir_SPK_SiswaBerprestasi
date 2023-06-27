@@ -52,10 +52,10 @@ menenntukan siswa berprestasi serta nilai bobot untuk menandakan seberapa pentin
 	                        <td><?= $krit['Nilai_Bobot']; ?></td>
 	                        <td><?= $krit['Atribut']; ?></td>
 	                        <td class="text-center">
-	                        	<a href="index.php?page=edit_kriteria&edit=<?= $krit['Nama_Kriteria']; ?>&id=<?= $krit['ID_Kriteria']; ?>" class="btn btn-warning btn-square rounded-0">
+	                        	<a href="index.php?page=edit_kriteria&edit=<?= $krit['Nama_Kriteria']; ?>&id=<?= $krit['ID_Kriteria']; ?>" class="btn btn-warning btn-square rounded-0" title="Edit Kriteria">
 	                              <i class="fas fa-edit"></i>
 	                          </a>
-	                          <a href="index.php?page=data_kriteria&delete=<?= $krit['Nama_Kriteria']; ?>" class="btn btn-danger btn-square rounded-0">
+	                          <a href="index.php?page=data_kriteria&delete=<?= $krit['Nama_Kriteria']; ?>" class="btn btn-danger btn-square rounded-0" title="Hapus Kriteria" onclick="return confirm('Hapus Kriteria?');">
 	                              <i class="fas fa-trash"></i>
 	                          </a>
 	                        </td>

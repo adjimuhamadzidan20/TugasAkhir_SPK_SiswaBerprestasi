@@ -1,3 +1,15 @@
+<?php  
+    if (isset($_POST['masuk'])) {
+
+        if ($_POST['username'] == 'admin' && $_POST['password'] == 'admin') {
+            header('Location: index.php');
+        } else {
+            $notif = 'Username dan password anda salah!';
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,15 +60,24 @@
                                     <!-- <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div> -->
-                                    <form class="user">
+                                    <p>
+                                        <?php
+                                            if (!isset($notif)) {
+                                                echo '';
+                                            } else {
+                                                echo $notif;
+                                            } 
+                                        ?>
+                                    </p>
+                                    <form class="user" method="post">
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user rounded-0"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Username">
+                                                placeholder="Username" name="username">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user rounded-0"
-                                                id="exampleInputPassword" placeholder="Password">
+                                                id="exampleInputPassword" placeholder="Password" name="password">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -65,9 +86,9 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block rounded-0">
+                                        <button type="submit" class="btn btn-primary btn-user btn-block rounded-0" name="masuk">
                                             Masuk
-                                        </a>
+                                        </button>
                                         <hr>
                                        <!--  <a href="index.html" class="btn btn-google btn-user btn-block">
                                             <i class="fab fa-google fa-fw"></i> Login with Google

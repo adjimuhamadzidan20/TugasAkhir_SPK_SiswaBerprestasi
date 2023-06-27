@@ -65,18 +65,6 @@
 			include 'pages/hasil_perhitungan/hasil_perhitungan.php';
 		} 
 
-		else if ($pages === 'hasil_normalisasi') {
-			include 'pages/hasil_perhitungan/hasil_normalisasi.php';
-		}
-
-		else if ($pages === 'hasil_preferensi') {
-			include 'pages/hasil_perhitungan/hasil_preferensi.php';
-		}
-
-		else if ($pages === 'perankingan') {
-			include 'pages/hasil_perhitungan/perankingan.php';
-		}
-
 		// halaman tentang spk
 		else if ($pages === 'tentang') {
 			include 'pages/informasi_lain/tentang_spk.php';

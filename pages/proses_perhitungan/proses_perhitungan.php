@@ -48,6 +48,7 @@
 				// perulangan data penilaian awal
 				$column = [];
 				while ($nilaiAlt = mysqli_fetch_assoc($queryNilai)) {
+					// mengambil nilai tertinggi (max)
 					$idkrit = "SELECT MAX(Nilai) FROM data_penilaian WHERE ID_Kriteria = '$nilaiAlt[ID_Kriteria]'";
 					$nilai = mysqli_query($koneksi_db, $idkrit);
 					$nilaiKrit = mysqli_fetch_row($nilai);

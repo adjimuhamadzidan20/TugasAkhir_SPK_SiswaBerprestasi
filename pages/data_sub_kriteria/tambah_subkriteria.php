@@ -1,4 +1,5 @@
 <?php
+    // if untuk handling notice error
     if (isset($_GET['idkriteria']) AND isset($_GET['kriteria'])) {
         $id = $_GET['idkriteria'];
         $krit = $_GET['kriteria'];
@@ -19,13 +20,26 @@
             $keterangan = htmlspecialchars($_POST['ket']);
             $nilai = htmlspecialchars($_POST['nilai']);
 
-            $sql = "INSERT INTO data_subkriteria VALUES ('', '$idKriteria', '$subkriteria', '$keterangan', '$nilai')";
-            mysqli_query($koneksi_db, $sql);
+            $query = mysqli_query($koneksi_db, "SELECT Nama_Subkriteria, Keterangan, Nilai FROM 
+            data_subkriteria WHERE Nama_Subkriteria = '$subkriteria'");
+            $id = mysqli_num_rows($query);
 
-            echo '<script>
-                document.location.href = "index.php?page=tambah_subkriteria&idkriteria='. $_GET['idkriteria'] .
-                '&kriteria='. $_GET['kriteria'] .'";
-            </script>';
+            // validasi input sub kriteria sudah ada atau belum
+            if ($id > 0) {
+                echo '<script>
+                    alert("Subkriteria sudah ada!");
+                    document.location.href = "index.php?page=tambah_subkriteria&idkriteria='. $_GET['idkriteria'] .
+                    '&kriteria='. $_GET['kriteria'] .'";
+                </script>';
+            } else {
+                $sql = "INSERT INTO data_subkriteria VALUES ('', '$idKriteria', '$subkriteria', '$keterangan', '$nilai')";
+                mysqli_query($koneksi_db, $sql);
+
+                echo '<script>
+                    document.location.href = "index.php?page=tambah_subkriteria&idkriteria='. $_GET['idkriteria'] .
+                    '&kriteria='. $_GET['kriteria'] .'";
+                </script>';
+            }
         }
     } else {
         // setting blank index
@@ -41,8 +55,6 @@
             echo '<script>
                 document.location.href = "index.php?page=sub_kriteria";
             </script>';
-
-            // die();
         }
     }
 
@@ -57,16 +69,19 @@
         <form action="" method="post">
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Sub Kriteria</label>
-              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="sub_kriteria" required>
+              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="sub_kriteria" placeholder="Masukkan Nama Sub" required>
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Keterangan</label>
-              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="ket" required>
+              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="ket" placeholder="Masukkan Keterangan" required>
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Nilai</label>
-              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="nilai" required>
+              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="nilai" placeholder="Masukkan Nilai" required>
             </div>
+            <a href="index.php?page=sub_kriteria" class="btn btn-success btn-square rounded-0">
+                Kembali
+            </a>
             <button type="submit" class="btn btn-success btn-square rounded-0" name="simpan">
                 Simpan
             </button>
@@ -103,7 +118,7 @@
                             <a href="index.php?page=edit_subkriteria&edit=<?= $subkrit['ID_Sub']; ?>" class="btn btn-warning btn-square rounded-0">
                               <i class="fas fa-edit"></i>
                           </a>
-                          <a href="index.php?page=tambah_subkriteria&delete=<?= $subkrit['Nama_Subkriteria']; ?>" class="btn btn-danger btn-square rounded-0">
+                          <a href="index.php?page=tambah_subkriteria&delete=<?= $subkrit['Nama_Subkriteria']; ?>" class="btn btn-danger btn-square rounded-0" onclick="return confirm('Hapus Subkriteria?');">
                               <i class="fas fa-trash"></i>
                           </a>
                         </td>
@@ -114,8 +129,5 @@
                 </tbody>
             </table>
         </div>
-        <a href="index.php?page=sub_kriteria" class="btn btn-success btn-square rounded-0">
-            Kembali
-        </a>
     </div>    
 </div>

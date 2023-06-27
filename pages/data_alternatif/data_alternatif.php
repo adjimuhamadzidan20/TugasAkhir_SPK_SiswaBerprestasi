@@ -57,7 +57,7 @@ menenntukan siswa berprestasi.</p> -->
                       	<a href="index.php?page=edit_alter&edit=<?= $alter['NISN']; ?>&id=<?= $alter['ID_Alter']; ?>" class="btn btn-warning btn-square rounded-0">
                             <i class="fas fa-edit"></i>
                         </a>
-                        <a href="index.php?page=data_siswa&delete=<?= $alter['NISN']; ?>" class="btn btn-danger btn-square rounded-0">
+                        <a href="index.php?page=data_siswa&delete=<?= $alter['NISN']; ?>" class="btn btn-danger btn-square rounded-0" onclick="return confirm('Hapus Alternatif?');">
                             <i class="fas fa-trash"></i>
                         </a>
                       </td>

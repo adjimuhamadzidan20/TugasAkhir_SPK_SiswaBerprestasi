@@ -8,9 +8,9 @@
 	// melihat penilaian yang telah diinput
   if (isset($_GET['cek'])) {
   	$namaKriteria = "SELECT data_penilaian.ID_Penilaian, data_alternatif.ID_Alter, data_alternatif.Nama_Siswa, data_penilaian.
-  	ID_Kriteria, data_kriteria.Nama_Kriteria, data_penilaian.Nilai FROM data_penilaian INNER JOIN data_alternatif ON data_penilaian.
-  	ID_Alter = data_alternatif.ID_Alter INNER JOIN data_kriteria ON data_penilaian.ID_Kriteria = data_kriteria.ID_Kriteria
-  	WHERE Nama_Siswa = '$_GET[cek]'";
+  	ID_Kriteria, data_kriteria.Nama_Kriteria, data_penilaian.Nilai FROM data_penilaian INNER JOIN data_alternatif ON 
+  	data_penilaian. ID_Alter = data_alternatif.ID_Alter INNER JOIN data_kriteria ON data_penilaian.ID_Kriteria = data_kriteria.
+  	ID_Kriteria WHERE Nama_Siswa = '$_GET[cek]'";
 
 	  $rendKriteria = mysqli_query($koneksi_db, $namaKriteria);
 
@@ -62,9 +62,20 @@ menenntukan siswa berprestasi.</p> -->
                   <td><?= 'A'. $no; ?></td>
                   <td><?= $alter['Nama_Siswa']; ?></td>
                   <td class="text-center">
-                  	<a href="index.php?page=tambah_penilaian&penilaian=<?= $alter['ID_Alter']; ?>" class="btn btn-success btn-square rounded-0" title="Tambah Penilaian">
-                        Masukan Penilaian
-                    </a>
+                  	<?php  
+                  		$jmlData = mysqli_query($koneksi_db, "SELECT * FROM data_penilaian WHERE ID_Alter = '$alter[ID_Alter]'");
+                  		$jml = mysqli_num_rows($jmlData);
+
+                  		if ($jml == 0) {
+                  	?>
+	                  	<a href="index.php?page=tambah_penilaian&penilaian=<?= $alter['ID_Alter']; ?>" class="btn btn-success btn-square rounded-0" title="Tambah Penilaian">
+	                        Masukan Penilaian
+	                    </a>
+	                  <?php } else if ($jml > 0){ ?>
+	                  	<button class="btn btn-success btn-square rounded-0" title="Penilaian Telah Diinput" readonly="readonly">
+	                        Penilaian Terinput
+	                    </button>
+	                  <?php } ?>  
                     <a href="index.php?page=data_penilaian&cek=<?= $alter['Nama_Siswa']; ?>" class="btn btn-success btn-square rounded-0" title="Lihat Penilaian">
                     	<i class="fas fa-eye"></i>
                     </a>

@@ -5,12 +5,23 @@
         $jk = htmlspecialchars($_POST['jenis_kelamin']);
         $kelas = htmlspecialchars($_POST['kelas']);
 
-        $sql = "INSERT INTO data_alternatif VALUES ('', '$nisn', '$siswa', '$jk', '$kelas')";
-        mysqli_query($koneksi_db, $sql);
+        $query = mysqli_query($koneksi_db, "SELECT NISN FROM data_alternatif WHERE NISN = '$nisn'");
+        $nisnSiswa = mysqli_num_rows($query);
 
-        echo '<script>
-            document.location.href = "index.php?page=data_siswa";
-        </script>';
+        // validasi input alternatif sudah ada atau belum
+        if ($nisnSiswa > 0) {
+            echo '<script>
+                alert("Nisn siswa sudah ada!");
+                document.location.href = "index.php?page=tambah_alter";
+            </script>';
+        } else {
+            $sql = "INSERT INTO data_alternatif VALUES ('', '$nisn', '$siswa', '$jk', '$kelas')";
+            mysqli_query($koneksi_db, $sql);
+
+            echo '<script>
+                document.location.href = "index.php?page=data_siswa";
+            </script>';
+        }
     }
 
 ?>
@@ -27,11 +38,11 @@
         <form action="" method="post">
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">NISN</label>
-              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="nisn" required>
+              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="nisn" placeholder="Masukkan NISN" required>
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Nama Siswa</label>
-              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="nama_siswa" required>
+              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="nama_siswa" placeholder="Masukkan Nama Siswa"required>
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">JK</label>
@@ -74,12 +85,12 @@
                   <option value="XII SIJA 3">XII SIJA 3</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-success btn-square rounded-0" name="simpan">
-                Simpan
-            </button>
             <a href="index.php?page=data_siswa" class="btn btn-success btn-square rounded-0">
                 Kembali
             </a>
+            <button type="submit" class="btn btn-success btn-square rounded-0" name="simpan">
+                Simpan
+            </button>
         </form>
     </div>
 </div>

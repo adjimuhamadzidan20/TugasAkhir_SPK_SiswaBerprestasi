@@ -1,16 +1,26 @@
-<?php  
-    
+<?php   
     if (isset($_POST['simpan'])) {
         $kriteria = htmlspecialchars($_POST['nama_kriteria']);
         $bobot = htmlspecialchars($_POST['bobot']);
         $atribut = htmlspecialchars($_POST['atribut']);
 
-        $sql = "INSERT INTO data_kriteria VALUES ('', '$kriteria', '$bobot', '$atribut')";
-        mysqli_query($koneksi_db, $sql);
+        $query = mysqli_query($koneksi_db, "SELECT Nama_Kriteria FROM data_kriteria WHERE Nama_Kriteria = '$kriteria'");
+        $namaKrit = mysqli_num_rows($query);
 
-        echo '<script>
-            document.location.href = "index.php?page=data_kriteria";
-        </script>';
+        // validasi input nama kriteria sudah ada atau belum
+        if ($namaKrit > 0) {
+            echo '<script>
+                alert("Nama kriteria sudah ada!");
+                document.location.href = "index.php?page=tambah_kriteria";
+            </script>';
+        } else {
+            $sql = "INSERT INTO data_kriteria VALUES ('', '$kriteria', '$bobot', '$atribut')";
+            mysqli_query($koneksi_db, $sql);
+
+            echo '<script>
+                document.location.href = "index.php?page=data_kriteria";
+            </script>';
+        }
     }
 
 ?>
@@ -27,11 +37,11 @@
         <form action="" method="post">
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Nama Kriteria</label>
-              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="nama_kriteria" required>
+              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="nama_kriteria" placeholder="Masukkan Kriteria" required>
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Nilai Bobot</label>
-              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="bobot" required>
+              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="bobot" placeholder="Masukkan Bobot" required>
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Atribut</label>
@@ -41,12 +51,12 @@
                   <option value="Cost">Cost</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-success btn-square rounded-0" name="simpan">
-                Simpan
-            </button>
             <a href="index.php?page=data_kriteria" class="btn btn-success btn-square rounded-0">
                 Kembali
             </a>
+            <button type="submit" class="btn btn-success btn-square rounded-0" name="simpan">
+                Simpan
+            </button>
         </form>
     </div>
 </div>
