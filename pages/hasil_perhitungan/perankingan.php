@@ -1,7 +1,4 @@
-<?php  
-	$sql = "SELECT * FROM data_kriteria";
-	$kriteria = mysqli_query($koneksi_db, $sql);
-
+<?php
 	$pref = mysqli_query($koneksi_db, "SELECT hasil_preferensi.ID_Pref, hasil_preferensi.ID_Alter, data_alternatif.Nama_Siswa, 
 	hasil_preferensi.hasil_pref FROM hasil_preferensi INNER JOIN data_alternatif ON 
 	hasil_preferensi.ID_Alter = data_alternatif.ID_Alter ORDER BY hasil_pref DESC");

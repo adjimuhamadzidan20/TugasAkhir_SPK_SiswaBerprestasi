@@ -75,6 +75,14 @@
 			include 'pages/informasi_lain/cara_penggunaan.php';
 		}
 
+		// halaman laporan
+		else if ($pages === 'laporan_normalisasi') {
+			include 'pages/laporan/laporan_normalisasi.php';
+		}
+		else if ($pages === 'laporan_perankingan') {
+			include 'pages/laporan/laporan_perankingan.php';
+		}
+
 	} else {
 		include 'pages/dashboard/dashboard.php';
 	}

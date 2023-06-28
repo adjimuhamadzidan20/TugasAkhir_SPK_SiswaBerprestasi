@@ -58,9 +58,6 @@
 
 ?>
 
-<!-- Page Heading -->
-<h4 class="mb-2 text-gray-800"></h4>
-
 <!-- DataTales Example -->
 <div class="card shadow mb-4 rounded-0">
     <div class="card-header py-3 d-flex">

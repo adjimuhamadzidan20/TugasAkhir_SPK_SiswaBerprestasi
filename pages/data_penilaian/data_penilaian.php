@@ -27,9 +27,9 @@
 ?>
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Penilaian Awal</h1>
-<!-- <p class="mb-4">Data siswa merupakan sebuah data alternatif atau pilihan untuk
-menenntukan siswa berprestasi.</p> -->
+<div class="d-sm-flex align-items-center justify-content-between mb-1">
+  <h1 class="h3 text-gray-800">Penilaian Awal</h1>
+</div>
 
 <!-- DataTales Example -->
 <div class="row">

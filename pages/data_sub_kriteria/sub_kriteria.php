@@ -5,9 +5,9 @@
 ?>
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Sub Kriteria</h1>
-<!-- <p class="mb-4">Data kriteria merupakan sebuah nama kriteria untuk
-menenntukan siswa berprestasi serta nilai bobot untuk menandakan seberapa penting.</p> -->
+<div class="d-sm-flex align-items-center justify-content-between mb-1">
+  <h1 class="h3 text-gray-800">Sub Kriteria</h1>
+</div>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4 rounded-0">

@@ -59,8 +59,8 @@
     <div id="collapsePageslaporan" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded-0">
             <h6 class="collapse-header">Cetak Laporan</h6>
-            <a class="collapse-item" href="index.php?page=tentang">Hasil Normalisasi</a>
-            <a class="collapse-item" href="index.php?page=penggunaan">Hasil Perankingan</a>
+            <a class="collapse-item" href="index.php?page=laporan_normalisasi">Cetak Normalisasi</a>
+            <a class="collapse-item" href="index.php?page=laporan_perankingan">Cetak Perankingan</a>
         </div>
     </div>
 </li>

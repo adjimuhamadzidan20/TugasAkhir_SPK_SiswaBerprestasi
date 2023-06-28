@@ -41,8 +41,9 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php?page=dashboard">
-                <div class="sidebar-brand-icon rotate-n-15">
+                <div class="sidebar-brand-icon">
                     <!-- <i class="fas fa-laugh-wink"></i> -->
+                    <!-- <img src="assets/img/SMKN9_Bekasi.png" alt="" class="img-profile w-75"> -->
                 </div>
                 <div class="sidebar-brand-text mx-3 text-left">SPK Siswa Berprestasi</div>
             </a>
@@ -71,7 +72,7 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                 <!-- nav_bar -->
-                <?php require 'template/nav_bar.php'; ?>
+                <?php require 'template/navbar.php'; ?>
 
                 </nav>
                 <!-- End of Topbar -->
@@ -142,8 +143,8 @@
 
      <!-- Page level plugins -->
     <!-- <script src="assets/vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
- -->
+    <script src="assets/vendor/datatables/dataTables.bootstrap4.min.js"></script> -->
+
     <!-- Page level custom scripts -->
     <!-- <script src="assets/js/demo/datatables-demo.js"></script> -->
 

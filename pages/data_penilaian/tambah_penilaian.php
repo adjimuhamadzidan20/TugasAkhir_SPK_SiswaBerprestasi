@@ -48,7 +48,9 @@
 ?>
 
 <!-- Page Heading -->
-<h4 class="mb-2 text-gray-800"><?= $res['Nama_Siswa']; ?></h4>
+<div class="d-sm-flex align-items-center justify-content-between mb-1">
+  <h1 class="h3 text-gray-800"><?= $res['Nama_Siswa']; ?></h1>
+</div>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4 rounded-0">
