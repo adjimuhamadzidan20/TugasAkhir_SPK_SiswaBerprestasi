@@ -7,8 +7,6 @@
     // nama kriteria
     $namaKriteria = "SELECT Nama_Kriteria FROM data_kriteria";
     $rendKriteria = mysqli_query($koneksi_db, $namaKriteria);
-    // $krit = mysqli_fetch_assoc($kriteria);
-    // $datKriteri = $krit['Nama_Kriteria'];
 
     // id kriteria
     $querykrit = "SELECT ID_Kriteria FROM data_kriteria";
@@ -19,9 +17,6 @@
     while ($resKrit = mysqli_fetch_assoc($hasil)) {
         $row[] = $resKrit['ID_Kriteria'];
     }
-
-    // var_dump($row);
-    // die();
   
     // jumlah data kriteria  
     $cekJuml = "SELECT COUNT(ID_Kriteria) FROM data_kriteria";
@@ -29,7 +24,6 @@
     $tes = mysqli_fetch_row($total);
     $jumlah = $tes[0];
     
-
     if (isset($_POST['simpan'])) {
         $i = 1;
         while ($i <= $jumlah) {
@@ -73,6 +67,7 @@
                     <div class="mb-4">
                       <label for="exampleFormControlInput1" class="form-label"><?= $krit['Nama_Kriteria']; ?></label>
                         <select class="form-control rounded-0" aria-label="Default select example" name="nilai[]" required>
+                          <option selected disabled>-- Pilih Penilaian --</option>
                           <?php 
                             $sub = "SELECT data_subkriteria.ID_Sub, data_kriteria.ID_Kriteria, data_kriteria.Nama_Kriteria, 
                             data_subkriteria.Nama_Subkriteria, data_subkriteria.Keterangan, data_subkriteria.Nilai FROM 
@@ -83,7 +78,8 @@
 
                             while ($res = mysqli_fetch_assoc($datasub)) :
                           ?>  
-                            <option value="<?= $res['Nilai']; ?>"><?= $res['Nilai']; ?> - <?= $res['Keterangan']; ?></option>
+                            <option value="<?= $res['Nilai']; ?>"><?= $res['Nama_Subkriteria']; ?> - <?= $res['Nilai']; ?> - 
+                            <?= $res['Keterangan']; ?></option>
                           <?php endwhile; ?>
                         </select>
                     </div>
@@ -93,10 +89,10 @@
                 endwhile; 
             ?>
             <a href="index.php?page=data_penilaian" class="btn btn-success btn-square rounded-0">
-                Kembali
+                <i class="fas fa-chevron-left fa-sm"></i> Kembali
             </a>
             <button type="submit" class="btn btn-success btn-square rounded-0" name="simpan">
-                Simpan
+                <i class="fas fa-save fa-sm"></i> Simpan
             </button>
         </form>
     </div>

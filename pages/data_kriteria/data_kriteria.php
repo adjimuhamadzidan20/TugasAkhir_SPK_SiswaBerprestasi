@@ -24,7 +24,7 @@ menenntukan siswa berprestasi serta nilai bobot untuk menandakan seberapa pentin
 <div class="card shadow mb-4 rounded-0">
     <div class="card-header py-3 d-flex align-items-center justify-content-between">
     		<a href="index.php?page=tambah_kriteria" class="btn btn-primary btn-square btn-sm rounded-0">
-           Tambah Kriteria
+          <i class="fas fa-plus fa-sm"></i> Tambah Kriteria
         </a>
         <h6 class="m-0 font-weight-bold text-primary">Tabel Data Kriteria & Bobot</h6>
     </div>

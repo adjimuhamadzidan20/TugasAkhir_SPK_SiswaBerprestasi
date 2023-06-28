@@ -30,11 +30,8 @@
 <div class="card shadow mb-4 rounded-0">
     <div class="card-body">
         <form action="" method="post">
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">ID Kriteria</label>
-              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="idkriteria" 
-              value="<?= $dataSub['ID_Kriteria']; ?>" readonly="readonly">
-            </div>
+            <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="idkriteria" 
+            value="<?= $dataSub['ID_Kriteria']; ?>" hidden="hidden">
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Sub Kriteria</label>
               <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="sub_kriteria" 
@@ -45,16 +42,16 @@
               <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="ket" 
               value="<?= $dataSub['Keterangan']; ?>" required>
             </div>
-            <div class="mb-3">
+            <div class="mb-4">
               <label for="exampleFormControlInput1" class="form-label">Nilai</label>
               <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="nilai"
               value="<?= $dataSub['Nilai']; ?>" required>
             </div>
             <a href="index.php?page=tambah_subkriteria&idkriteria=<?= $dataSub['ID_Kriteria']; ?>&kriteria=<?= $dataSub['Nama_Kriteria']; ?>" class="btn btn-success btn-square rounded-0">
-                Kembali
+                <i class="fas fa-chevron-left fa-sm"></i> Kembali
             </a>
             <button type="submit" class="btn btn-success btn-square rounded-0" name="edit">
-                Edit
+                <i class="fas fa-edit fa-sm"></i> Edit
             </button>
         </form>
     </div>

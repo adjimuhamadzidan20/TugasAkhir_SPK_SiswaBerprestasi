@@ -75,15 +75,15 @@
               <label for="exampleFormControlInput1" class="form-label">Keterangan</label>
               <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="ket" placeholder="Masukkan Keterangan" required>
             </div>
-            <div class="mb-3">
+            <div class="mb-4">
               <label for="exampleFormControlInput1" class="form-label">Nilai</label>
               <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="nilai" placeholder="Masukkan Nilai" required>
             </div>
             <a href="index.php?page=sub_kriteria" class="btn btn-success btn-square rounded-0">
-                Kembali
+                <i class="fas fa-chevron-left fa-sm"></i> Kembali
             </a>
             <button type="submit" class="btn btn-success btn-square rounded-0" name="simpan">
-                Simpan
+                <i class="fas fa-save fa-sm"></i> Simpan
             </button>
         </form>
     </div>

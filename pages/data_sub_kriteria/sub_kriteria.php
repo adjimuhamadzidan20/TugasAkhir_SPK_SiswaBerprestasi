@@ -35,7 +35,7 @@ menenntukan siswa berprestasi serta nilai bobot untuk menandakan seberapa pentin
                       <td><?= $krit['Nama_Kriteria']; ?></td>
                       <td class="text-center">
                       	<a href="index.php?page=tambah_subkriteria&idkriteria=<?= $krit['ID_Kriteria']; ?>&kriteria=<?= $krit['Nama_Kriteria']; ?>" class="btn btn-success btn-square rounded-0">
-                            Masukan Sub Kriteria
+                          <i class="fas fa-plus fa-sm"></i> Masukan Sub Kriteria
                         </a>
                       </td>
                     </tr>

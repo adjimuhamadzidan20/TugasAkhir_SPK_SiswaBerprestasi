@@ -86,10 +86,10 @@
                 </select>
             </div>
             <a href="index.php?page=data_siswa" class="btn btn-success btn-square rounded-0">
-                Kembali
+                <i class="fas fa-chevron-left fa-sm"></i> Kembali
             </a>
             <button type="submit" class="btn btn-success btn-square rounded-0" name="simpan">
-                Simpan
+                <i class="fas fa-save fa-sm"></i> Simpan
             </button>
         </form>
     </div>

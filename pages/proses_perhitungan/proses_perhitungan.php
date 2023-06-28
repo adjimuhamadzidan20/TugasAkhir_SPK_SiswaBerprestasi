@@ -41,17 +41,27 @@
 
 				// menangkap data penilaian dari masing" kriteria berdasarkan nama alternatif
 				$queryNilai = mysqli_query($koneksi_db, "SELECT data_penilaian.ID_Penilaian, data_penilaian.ID_Alter, data_alternatif.
-				Nama_Siswa, data_penilaian.ID_Kriteria, data_kriteria.Nama_Kriteria, data_penilaian.Nilai FROM data_penilaian INNER JOIN 
-				data_kriteria ON data_penilaian.ID_Kriteria = data_kriteria.ID_Kriteria INNER JOIN data_alternatif ON 
-				data_penilaian.ID_Alter = data_alternatif.ID_Alter WHERE Nama_Siswa = '$nama[Nama_Siswa]'");
+				Nama_Siswa, data_penilaian.ID_Kriteria, data_kriteria.Atribut, data_kriteria.Nama_Kriteria, data_penilaian.Nilai 
+				FROM data_penilaian INNER JOIN data_kriteria ON data_penilaian.ID_Kriteria = data_kriteria.ID_Kriteria INNER JOIN 
+				data_alternatif ON data_penilaian.ID_Alter = data_alternatif.ID_Alter WHERE Nama_Siswa = '$nama[Nama_Siswa]'");
 				
 				// perulangan data penilaian awal
 				$column = [];
 				while ($nilaiAlt = mysqli_fetch_assoc($queryNilai)) {
-					// mengambil nilai tertinggi (max)
-					$idkrit = "SELECT MAX(Nilai) FROM data_penilaian WHERE ID_Kriteria = '$nilaiAlt[ID_Kriteria]'";
-					$nilai = mysqli_query($koneksi_db, $idkrit);
-					$nilaiKrit = mysqli_fetch_row($nilai);
+
+					// mengecek atribut kriteria benefit / cost
+					if ($nilaiAlt['Atribut'] == 'Benefit') {
+						// mengambil nilai tertinggi (max)
+						$idkrit = "SELECT MAX(Nilai) FROM data_penilaian WHERE ID_Kriteria = '$nilaiAlt[ID_Kriteria]'";
+						$nilai = mysqli_query($koneksi_db, $idkrit);
+						$nilaiKrit = mysqli_fetch_row($nilai);
+					} 
+					else if ($nilaiAlt['Atribut'] == 'Cost') {
+						// mengambil nilai terendah (min)
+						$idkrit = "SELECT MIN(Nilai) FROM data_penilaian WHERE ID_Kriteria = '$nilaiAlt[ID_Kriteria]'";
+						$nilai = mysqli_query($koneksi_db, $idkrit);
+						$nilaiKrit = mysqli_fetch_row($nilai);
+					}
 
 					// nilai dari penilaian awal dibagi nilai max dari masing kriteria 
 					$column[] = $nilaiAlt['Nilai'] / $nilaiKrit[0];
@@ -97,21 +107,33 @@
 		        </script>';
 
 		} else if ($jmlHasilNorm == 0 && $jmlHasilPref == 0) {
+
 			// perulangan nilai dalam kriteria berdasarkan jumlah data alter
 			while ($nama = mysqli_fetch_assoc($alterSiswa)) {
 
 				// menangkap data penilaian dari masing" kriteria berdasarkan nama alternatif
 				$queryNilai = mysqli_query($koneksi_db, "SELECT data_penilaian.ID_Penilaian, data_penilaian.ID_Alter, data_alternatif.
-				Nama_Siswa, data_penilaian.ID_Kriteria, data_kriteria.Nama_Kriteria, data_penilaian.Nilai FROM data_penilaian INNER JOIN 
-				data_kriteria ON data_penilaian.ID_Kriteria = data_kriteria.ID_Kriteria INNER JOIN data_alternatif ON 
-				data_penilaian.ID_Alter = data_alternatif.ID_Alter WHERE Nama_Siswa = '$nama[Nama_Siswa]'");
+				Nama_Siswa, data_penilaian.ID_Kriteria, data_kriteria.Atribut, data_kriteria.Nama_Kriteria, data_penilaian.Nilai FROM 
+				data_penilaian INNER JOIN data_kriteria ON data_penilaian.ID_Kriteria = data_kriteria.ID_Kriteria INNER JOIN
+				data_alternatif ON data_penilaian.ID_Alter = data_alternatif.ID_Alter WHERE Nama_Siswa = '$nama[Nama_Siswa]'");
 				
 				// perulangan data penilaian awal
 				$column = [];
 				while ($nilaiAlt = mysqli_fetch_assoc($queryNilai)) {
-					$idkrit = "SELECT MAX(Nilai) FROM data_penilaian WHERE ID_Kriteria = '$nilaiAlt[ID_Kriteria]'";
-					$nilai = mysqli_query($koneksi_db, $idkrit);
-					$nilaiKrit = mysqli_fetch_row($nilai);
+
+					// mengecek atribut kriteria benefit / cost
+					if ($nilaiAlt['Atribut'] == 'Benefit') {
+						// mengambil nilai tertinggi (max)
+						$idkrit = "SELECT MAX(Nilai) FROM data_penilaian WHERE ID_Kriteria = '$nilaiAlt[ID_Kriteria]'";
+						$nilai = mysqli_query($koneksi_db, $idkrit);
+						$nilaiKrit = mysqli_fetch_row($nilai);
+					} 
+					else if ($nilaiAlt['Atribut'] == 'Cost') {
+						// mengambil nilai terendah (min)
+						$idkrit = "SELECT MIN(Nilai) FROM data_penilaian WHERE ID_Kriteria = '$nilaiAlt[ID_Kriteria]'";
+						$nilai = mysqli_query($koneksi_db, $idkrit);
+						$nilaiKrit = mysqli_fetch_row($nilai);
+					}
 
 					// nilai dari penilaian awal dibagi nilai max dari masing kriteria 
 					$column[] = $nilaiAlt['Nilai'] / $nilaiKrit[0];
@@ -170,7 +192,7 @@ menenntukan siswa berprestasi.</p> -->
 		<!-- <a href="index.php?page=tambah_alter" class="btn btn-primary btn-square btn-sm">
        Tambah Alternatif
     </a> -->
-    <h6 class="m-0 font-weight-bold text-primary">Penilaian Awal</h6>
+    <h6 class="m-0 font-weight-bold text-primary">Tabel Penilaian Awal</h6>
   </div>
   <div class="card-body">
     <div class="table-responsive">
@@ -209,7 +231,7 @@ menenntukan siswa berprestasi.</p> -->
 <div class="d-flex justify-content-start">
 	<form action="" method="post">
 		<button type="submit" class="btn btn-success btn-square rounded-0" name="hitung">
-    	Buat SPK
+    	<i class="fas fa-calculator fa-sm"></i> Hitung
   	</button>
 	</form> 	
 </div>

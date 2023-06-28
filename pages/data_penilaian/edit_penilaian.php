@@ -106,10 +106,10 @@
                 endwhile; 
             ?>
             <a href="index.php?page=data_penilaian" class="btn btn-success btn-square rounded-0">
-                Kembali
+                <i class="fas fa-chevron-left fa-sm"></i> Kembali
             </a>
             <button type="submit" class="btn btn-success btn-square rounded-0" name="edit">
-                Edit
+                <i class="fas fa-edit fa-sm"></i> Edit
             </button>
         </form>
     </div>

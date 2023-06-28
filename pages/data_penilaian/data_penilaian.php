@@ -69,18 +69,18 @@ menenntukan siswa berprestasi.</p> -->
                   		if ($jml == 0) {
                   	?>
 	                  	<a href="index.php?page=tambah_penilaian&penilaian=<?= $alter['ID_Alter']; ?>" class="btn btn-success btn-square rounded-0" title="Tambah Penilaian">
-	                        Masukan Penilaian
+	                      <i class="fas fa-plus fa-sm"></i> Masukan Penilaian
 	                    </a>
 	                  <?php } else if ($jml > 0){ ?>
 	                  	<button class="btn btn-success btn-square rounded-0" title="Penilaian Telah Diinput" readonly="readonly">
-	                        Penilaian Terinput
+	                        <i class="fas fa-check fa-sm"></i> Penilaian Terinput
 	                    </button>
 	                  <?php } ?>  
-                    <a href="index.php?page=data_penilaian&cek=<?= $alter['Nama_Siswa']; ?>" class="btn btn-success btn-square rounded-0" title="Lihat Penilaian">
-                    	<i class="fas fa-eye"></i>
-                    </a>
                   </td>
                   <td class="text-center">
+                  	<a href="index.php?page=data_penilaian&cek=<?= $alter['Nama_Siswa']; ?>" class="btn btn-info btn-square rounded-0" title="Lihat Penilaian">
+                    	<i class="fas fa-eye"></i>
+                    </a>
                   	<a href="index.php?page=edit_penilaian&edit=<?= $alter['Nama_Siswa']; ?>&id=<?= $alter['ID_Alter']; ?>" class="btn btn-warning btn-square rounded-0" title="Edit Penilaian">
                         <i class="fas fa-edit"></i>
                     </a>
