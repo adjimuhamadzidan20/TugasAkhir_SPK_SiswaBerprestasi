@@ -8,7 +8,7 @@
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
   <h5 class="mb-3 text-gray-800 my-auto">Laporan Hasil Perankingan</h5>
-  <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary rounded-0">
+  <a href="assets/report/report_perankingan.php" class="d-none d-sm-inline-block btn btn-sm btn-primary rounded-0" target="_blank">
   	<i class="fas fa-file-pdf fa-sm"></i> Cetak Laporan
 	</a>
 </div>

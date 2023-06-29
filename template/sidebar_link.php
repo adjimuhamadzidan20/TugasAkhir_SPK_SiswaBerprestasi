@@ -26,7 +26,7 @@
 <li class="nav-item">
     <a class="nav-link collapsed" href="index.php?page=data_penilaian"
         aria-expanded="true" aria-controls="collapseUtilities">
-        <i class="fas fa-fw fa-folder"></i>
+        <i class="fas fa-fw fa-tasks"></i>
         <span>Penilaian Awal</span>
     </a>
 </li>
@@ -35,7 +35,7 @@
 <li class="nav-item">
     <a class="nav-link collapsed" href="index.php?page=proses_perhitungan"
         aria-expanded="true" aria-controls="collapseUtilities">
-        <i class="fas fa-fw fa-folder"></i>
+        <i class="fas fa-fw fa-calculator"></i>
         <span>Proses Perhitungan</span>
     </a>
 </li>
@@ -44,7 +44,7 @@
 <li class="nav-item">
     <a class="nav-link collapsed" href="index.php?page=hasil_perhitungan"
         aria-expanded="true" aria-controls="collapsePages">
-        <i class="fas fa-fw fa-folder"></i>
+        <i class="fas fa-fw fa-table"></i>
         <span>Hasil Perhitungan</span>
     </a>
 </li>

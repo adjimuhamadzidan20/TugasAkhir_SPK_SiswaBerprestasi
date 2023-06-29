@@ -21,8 +21,12 @@
     <li class="page-item" aria-current="page">
       <a class="page-link rounded-0" href="index.php?page=hasil_perhitungan&hasil=normalisasi">Hasil Normalisasi</a>
     </li>
-    <li class="page-item"><a class="page-link rounded-0" href="index.php?page=hasil_perhitungan&hasil=preferensi">Hasil Preferensi</a></li>
-    <li class="page-item"><a class="page-link rounded-0" href="index.php?page=hasil_perhitungan&hasil=perankingan">Perankingan</a></li>
+    <li class="page-item">
+    	<a class="page-link rounded-0" href="index.php?page=hasil_perhitungan&hasil=preferensi">Hasil Preferensi</a>
+    </li>
+    <li class="page-item">
+    	<a class="page-link rounded-0" href="index.php?page=hasil_perhitungan&hasil=perankingan">Perankingan</a>
+    </li>
   </ul>
 </nav>
 
