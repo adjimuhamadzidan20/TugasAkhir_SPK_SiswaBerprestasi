@@ -4,10 +4,10 @@
 </div>
 
 <!-- DataTales Example -->
-<div class="card shadow mb-4 rounded-0">
-    <div class="card-body" style="padding: 35px; line-height: 26px;">
-        <h5 class="mb-4">Langkah-langkah penggunaan (diharapkan membaca hingga akhir) :</h5>
-        <div class="text-left"> 
+<div class="card mb-4 rounded-0">
+    <div class="card-body" style="padding: 35px;">
+        <h5 class="mb-3">Langkah-langkah penggunaan :</h5>
+        <div class="text-justify font-weight-light"> 
             <p>
                 <b>Pertama</b>, menambahkan dahulu <b>Data Kriteria</b> dengan memasukan (input) nama kriterianya, kemudian masukkan nilai bobot (untuk nilai bobot dapat ditentukan berdasarkan seberapa kepentingannya), lalu pilih atribut (Benefit/Cost), Benefit yaitu mencari nilai tertinggi (MAX), sedangkan Cost mencari nilai terendah (MIN), setelah diinputkan klik <b>Simpan</b>. Untuk mengisi <b>Data Kriteria</b> ada pada bagian pilihan <b>Menu Data > Data Kriteria</b>.    
             </p>

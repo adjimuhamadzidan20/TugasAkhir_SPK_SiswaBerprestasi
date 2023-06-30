@@ -53,9 +53,9 @@
 </div>
 
 <!-- DataTales Example -->
-<div class="card shadow mb-4 rounded-0">
-    <div class="card-header py-3 d-flex">
-        <h6 class="m-0 font-weight-bold text-primary">Tambah Penilaian</h6>
+<div class="card mb-4 rounded-0">
+    <div class="card-header bg-white py-3 d-flex">
+        <h6 class="m-0 text-gray-800">Tambah Penilaian</h6>
     </div>
     <div class="card-body">
         <form action="" method="post">
@@ -90,7 +90,7 @@
                 $i++;
                 endwhile; 
             ?>
-            <a href="index.php?page=data_penilaian" class="btn btn-success btn-square rounded-0">
+            <a href="index.php?page=data_penilaian" class="btn btn-secondary btn-square rounded-0">
                 <i class="fas fa-chevron-left fa-sm"></i> Kembali
             </a>
             <button type="submit" class="btn btn-success btn-square rounded-0" name="simpan">

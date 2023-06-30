@@ -5,8 +5,8 @@
 
 ?>
 
-<div class="card-header py-3 d-flex align-items-center justify-content-between">
-    <h6 class="m-0 font-weight-bold text-primary">Hasil Preferensi</h6>
+<div class="card-header bg-white py-3 d-flex align-items-center justify-content-between">
+    <h6 class="m-0 text-gray-800">Hasil Preferensi</h6>
 </div>
 <div class="card-body">
     <div class="table-responsive">
@@ -19,16 +19,16 @@
                 </tr>
             </thead>
             <tbody>
-            		<?php
-            			$no = 0;  
-            			while ($res = mysqli_fetch_assoc($pref)) :
-            			$no++;	
-            		?>
-                  <tr>
-                      <td><?= $no; ?></td>
-                      <td><?= $res['Nama_Siswa']; ?></td>
-                      <td><?= $res['hasil_pref']; ?></td>  
-                  </tr>
+            	<?php
+        			$no = 0;  
+        			while ($res = mysqli_fetch_assoc($pref)) :
+        			$no++;	
+        		?>
+                <tr>
+                    <td><?= $no; ?></td>
+                    <td><?= $res['Nama_Siswa']; ?></td>
+                    <td><?= $res['hasil_pref']; ?></td>  
+                </tr>
               	<?php endwhile; ?>
             </tbody>
         </table>

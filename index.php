@@ -27,6 +27,25 @@
         * {
             font-family: sans-serif;
         }
+
+        .sidebar {
+            background-color: #130f40;
+        }
+
+        .pagination .active .page-link {
+            background-color: #130f40;
+            border-color: #130f40;
+        }
+
+        .btn-success {
+            background-color: #01a3a4;
+            border-color: #01a3a4;
+        }
+
+        .btn-success:hover {
+            background-color: #039798;
+            border-color: #039798;
+        }
     </style>
 
 </head>
@@ -37,15 +56,16 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: darkblue;">
+        <ul class="navbar-nav bg-gradient sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php?page=dashboard">
-                <div class="sidebar-brand-icon">
+                <div class="sidebar-brand-icon p-2">
                     <!-- <i class="fas fa-laugh-wink"></i> -->
-                    <!-- <img src="assets/img/SMKN9_Bekasi.png" alt="" class="img-profile w-75"> -->
+                    <!-- <h1 class="h2 font-weight-bold my-auto">SPK</h1> -->
+                    <img src="assets/img/SMKN9_Bekasi.png" alt="" class="img-profile w-100">
                 </div>
-                <div class="sidebar-brand-text mx-3 text-left">SPK Siswa Berprestasi</div>
+                <div class="sidebar-brand-text mx-2 text-left">SPK Siswa Berprestasi</div>
             </a>
 
             <!-- Divider -->
@@ -69,7 +89,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top border-bottom">
 
                 <!-- nav_bar -->
                 <?php require 'template/navbar.php'; ?>
@@ -107,7 +127,7 @@
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
+    <a class="scroll-to-top rounded-0" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
@@ -125,7 +145,7 @@
                 <div class="modal-body">Klik "Logout" untuk meninggalkan dashboard</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary rounded-0" type="button" data-dismiss="modal">Kembali</button>
-                    <a class="btn btn-primary rounded-0" href="login.php">Logout</a>
+                    <a class="btn btn-success rounded-0" href="login.php">Logout</a>
                 </div>
             </div>
         </div>
@@ -147,6 +167,8 @@
 
     <!-- Page level custom scripts -->
     <script src="assets/js/demo/datatables-demo.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 

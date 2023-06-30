@@ -29,27 +29,27 @@
 </div>
 
 <!-- DataTales Example -->
-<div class="card shadow mb-4 rounded-0">
+<div class="card mb-4 rounded-0">
     <div class="card-body">
         <form action="" method="post">
             <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="idkriteria" 
             value="<?= $dataSub['ID_Kriteria']; ?>" hidden="hidden">
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Sub Kriteria</label>
-              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="sub_kriteria" 
+                <label for="exampleFormControlInput1" class="form-label">Sub Kriteria</label>
+                <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="sub_kriteria" 
               value="<?= $dataSub['Nama_Subkriteria']; ?>" required>
             </div>
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Keterangan</label>
-              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="ket" 
+                <label for="exampleFormControlInput1" class="form-label">Keterangan</label>
+                <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="ket" 
               value="<?= $dataSub['Keterangan']; ?>" required>
             </div>
             <div class="mb-4">
-              <label for="exampleFormControlInput1" class="form-label">Nilai</label>
-              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="nilai"
+                <label for="exampleFormControlInput1" class="form-label">Nilai</label>
+                <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="nilai"
               value="<?= $dataSub['Nilai']; ?>" required>
             </div>
-            <a href="index.php?page=tambah_subkriteria&idkriteria=<?= $dataSub['ID_Kriteria']; ?>&kriteria=<?= $dataSub['Nama_Kriteria']; ?>" class="btn btn-success btn-square rounded-0">
+            <a href="index.php?page=tambah_subkriteria&idkriteria=<?= $dataSub['ID_Kriteria']; ?>&kriteria=<?= $dataSub['Nama_Kriteria']; ?>" class="btn btn-secondary btn-square rounded-0">
                 <i class="fas fa-chevron-left fa-sm"></i> Kembali
             </a>
             <button type="submit" class="btn btn-success btn-square rounded-0" name="edit">

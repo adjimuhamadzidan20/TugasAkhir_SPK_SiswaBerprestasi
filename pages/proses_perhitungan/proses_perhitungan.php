@@ -187,12 +187,12 @@
 </div>
 
 <!-- DataTales Example -->
-<div class="card shadow mb-3 rounded-0">
-  <div class="card-header py-3 d-flex align-items-center justify-content-between">
+<div class="card mb-3 rounded-0">
+  <div class="card-header bg-white py-3 d-flex align-items-center justify-content-between">
 		<!-- <a href="index.php?page=tambah_alter" class="btn btn-primary btn-square btn-sm">
        Tambah Alternatif
     </a> -->
-    <h6 class="m-0 font-weight-bold text-primary">Tabel Penilaian Awal</h6>
+    <h6 class="m-0 text-gray-800">Tabel Penilaian Awal</h6>
   </div>
   <div class="card-body">
     <div class="table-responsive">

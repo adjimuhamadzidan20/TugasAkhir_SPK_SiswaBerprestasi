@@ -4,8 +4,8 @@
 
 ?>
 
-<div class="card-header py-3 d-flex align-items-center justify-content-between">
-    <h6 class="m-0 font-weight-bold text-primary">Hasil Normalisasi</h6>
+<div class="card-header bg-white py-3 d-flex align-items-center justify-content-between">
+    <h6 class="m-0 text-gray-800">Hasil Normalisasi</h6>
 </div>
 <div class="card-body">
     <div class="table-responsive">
@@ -28,7 +28,7 @@
                     $no++;
                 ?>
                 <tr>
-                        <td><?= $no; ?></td>
+                    <td><?= $no; ?></td>
                     <td><?= $sis['Nama_Siswa']; ?></td>
                     <?php  
                         $hasil = mysqli_query($koneksi_db, "SELECT Hasil_Norm FROM hasil_normalisasi 

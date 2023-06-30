@@ -66,22 +66,22 @@
 </div>
 
 <!-- DataTales Example -->
-<div class="card shadow mb-4 rounded-0">
+<div class="card mb-4 rounded-0">
     <div class="card-body">
         <form action="" method="post">
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Sub Kriteria</label>
-              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="sub_kriteria" placeholder="Masukkan Nama Sub" required>
+                <label for="exampleFormControlInput1" class="form-label">Sub Kriteria</label>
+                <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="sub_kriteria" placeholder="Masukkan Nama Sub" required>
             </div>
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Keterangan</label>
-              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="ket" placeholder="Masukkan Keterangan" required>
+                <label for="exampleFormControlInput1" class="form-label">Keterangan</label>
+                <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="ket" placeholder="Masukkan Keterangan" required>
             </div>
             <div class="mb-4">
-              <label for="exampleFormControlInput1" class="form-label">Nilai</label>
-              <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="nilai" placeholder="Masukkan Nilai" required>
+                <label for="exampleFormControlInput1" class="form-label">Nilai</label>
+                <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="nilai" placeholder="Masukkan Nilai" required>
             </div>
-            <a href="index.php?page=sub_kriteria" class="btn btn-success btn-square rounded-0">
+            <a href="index.php?page=sub_kriteria" class="btn btn-secondary btn-square rounded-0">
                 <i class="fas fa-chevron-left fa-sm"></i> Kembali
             </a>
             <button type="submit" class="btn btn-success btn-square rounded-0" name="simpan">
@@ -90,7 +90,7 @@
         </form>
     </div>
 </div>
-<div class="card shadow rounded-0">
+<div class="card rounded-0">
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -117,12 +117,12 @@
                         <td><?= $subkrit['Keterangan']; ?></td>
                         <td><?= $subkrit['Nilai']; ?></td>
                         <td class="text-center">
-                            <a href="index.php?page=edit_subkriteria&edit=<?= $subkrit['ID_Sub']; ?>" class="btn btn-warning btn-square rounded-0">
-                              <i class="fas fa-edit"></i>
-                          </a>
-                          <a href="index.php?page=tambah_subkriteria&delete=<?= $subkrit['Nama_Subkriteria']; ?>" class="btn btn-danger btn-square rounded-0" onclick="return confirm('Hapus Subkriteria?');">
-                              <i class="fas fa-trash"></i>
-                          </a>
+                            <a href="index.php?page=edit_subkriteria&edit=<?= $subkrit['ID_Sub']; ?>" class="btn btn-success btn-square rounded-0">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a href="index.php?page=tambah_subkriteria&delete=<?= $subkrit['Nama_Subkriteria']; ?>" class="btn btn-success btn-square rounded-0" onclick="return confirm('Hapus Subkriteria?');">
+                                <i class="fas fa-trash"></i>
+                            </a>
                         </td>
                     </tr>
                     <?php  

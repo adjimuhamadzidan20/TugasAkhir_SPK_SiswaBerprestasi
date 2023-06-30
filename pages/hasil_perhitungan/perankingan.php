@@ -5,32 +5,32 @@
 
 ?>
 
-<div class="card-header py-3 d-flex align-items-center justify-content-between">
-    <h6 class="m-0 font-weight-bold text-primary">Hasil Akhir (Perankingan)</h6>
+<div class="card-header bg-white py-3 d-flex align-items-center justify-content-between">
+    <h6 class="m-0 text-gray-800">Hasil Akhir (Perankingan)</h6>
 </div>
 <div class="card-body">
-    <div class="table-responsive">
-        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-            <thead>
-                <tr>
-                    <th>Nama Siswa</th>
-                    <th>Nilai Akhir</th>
-                    <th>Peringkat</th>
-                </tr>
-            </thead>
-            <tbody>
-            		<?php
-            			$no = 0;  
-            			while ($res = mysqli_fetch_assoc($pref)) :
-            			$no++;	
-            		?>
-                  <tr>
-                      <td><?= $res['Nama_Siswa']; ?></td>
-                      <td><?= $res['hasil_pref']; ?></td>
-                      <td><?= $no; ?></td>  
-                  </tr>
-              	<?php endwhile; ?>
-            </tbody>
-        </table>
-    </div>
+  <div class="table-responsive">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Nama Siswa</th>
+          <th>Nilai Akhir</th>
+          <th>Peringkat</th>
+        </tr>
+      </thead>
+      <tbody>
+    		<?php
+    			$no = 0;  
+    			while ($res = mysqli_fetch_assoc($pref)) :
+    			$no++;	
+    		?>
+          <tr>
+            <td><?= $res['Nama_Siswa']; ?></td>
+            <td><?= $res['hasil_pref']; ?></td>
+            <td><?= $no; ?></td>  
+          </tr>
+      	<?php endwhile; ?>
+      </tbody>
+    </table>
+  </div>
 </div>
