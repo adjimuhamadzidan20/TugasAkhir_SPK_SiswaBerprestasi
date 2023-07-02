@@ -65,14 +65,14 @@
                     <!-- <h1 class="h2 font-weight-bold my-auto">SPK</h1> -->
                     <img src="assets/img/SMKN9_Bekasi.png" alt="" class="img-profile w-100">
                 </div>
-                <div class="sidebar-brand-text mx-2 text-left">SPK Siswa Berprestasi</div>
+                <div class="sidebar-brand-text mx-2 text-left font-weight-normal">SPK Siswa Berprestasi</div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- sidebar link -->
-            <?php require 'template/sidebar_link.php'; ?>
+            <?php require 'template/sidebar_menu.php'; ?>
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline mt-4">

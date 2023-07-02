@@ -29,10 +29,11 @@
 	$jmlHasilNorm = mysqli_num_rows($datNorm);
 	$jmlHasilPref = mysqli_num_rows($datPref);
 
-	// fungsi perhitungan
+	// fungsi perhitungan spk
 	if (isset($_POST['hitung'])) {
 		
 		if ($jmlHasilNorm && $jmlHasilPref) {
+			// query mereset ulang isi data tabel
 			$tabNorm = mysqli_query($koneksi_db, "TRUNCATE TABLE hasil_normalisasi");
 			$tabPref = mysqli_query($koneksi_db, "TRUNCATE TABLE hasil_preferensi");
 
@@ -101,7 +102,6 @@
 				mysqli_query($koneksi_db, "INSERT INTO hasil_preferensi VALUES ('', '$idAl[ID_Alter]', '$hasilNorm')");
 			} 
 
-			// die();
 			echo '<script>
 		            document.location.href = "index.php?page=hasil_perhitungan";
 		        </script>';

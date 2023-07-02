@@ -4,22 +4,22 @@
     $sqlEdit = "SELECT * FROM data_kriteria WHERE Nama_Kriteria = '$namaKrit'";
     $queryEdit = mysqli_query($koneksi_db, $sqlEdit);
     $data = mysqli_fetch_assoc($queryEdit);
-    
+
     // fungsi edit
     if (isset($_POST['edit'])) {
-        $kriteria = htmlspecialchars($_POST['nama_kriteria']);
-        $bobot = htmlspecialchars($_POST['bobot']);
-        $atribut = htmlspecialchars($_POST['atribut']);
+    $kriteria = htmlspecialchars($_POST['nama_kriteria']);
+    $bobot = htmlspecialchars($_POST['bobot']);
+    $atribut = htmlspecialchars($_POST['atribut']);
 
-        $sql = "UPDATE data_kriteria SET Nama_Kriteria = '$kriteria', Nilai_Bobot = '$bobot', Atribut = '$atribut'
-        WHERE ID_Kriteria = '$_GET[id]'";
-        mysqli_query($koneksi_db, $sql);
+    $sql = "UPDATE data_kriteria SET Nama_Kriteria = '$kriteria', Nilai_Bobot = '$bobot', Atribut = '$atribut'
+    WHERE ID_Kriteria = '$_GET[id]'";
+    mysqli_query($koneksi_db, $sql);
 
-        echo '<script>
-            document.location.href = "index.php?page=data_kriteria";
-        </script>';
+    echo '<script>
+        alert("Kriteria berhasil terubah!");
+        document.location.href = "index.php?page=data_kriteria";
+    </script>';
     }
-
 ?>
 
 <!-- Page Heading -->

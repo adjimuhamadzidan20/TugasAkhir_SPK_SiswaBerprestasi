@@ -1,7 +1,6 @@
 <?php  
 	$sql = "SELECT * FROM data_kriteria";
 	$kriteria = mysqli_query($koneksi_db, $sql);
-
 ?>
 
 <!-- Page Heading -->
@@ -30,15 +29,15 @@
       			while ($krit = mysqli_fetch_assoc($kriteria)) :
       			$no++;
       		?>
-          <tr>
-            <td><?= 'C'. $no; ?></td>
-            <td><?= $krit['Nama_Kriteria']; ?></td>
-            <td class="text-center">
-            	<a href="index.php?page=tambah_subkriteria&idkriteria=<?= $krit['ID_Kriteria']; ?>&kriteria=<?= $krit['Nama_Kriteria']; ?>" class="btn btn-success btn-square rounded-0">
-                <i class="fas fa-plus fa-sm"></i> Masukan Sub Kriteria
-              </a>
-            </td>
-          </tr>
+	          <tr>
+	            <td><?= 'C'. $no; ?></td>
+	            <td><?= $krit['Nama_Kriteria']; ?></td>
+	            <td class="text-center">
+	            	<a href="index.php?page=tambah_subkriteria&idkriteria=<?= $krit['ID_Kriteria']; ?>&kriteria=<?= $krit['Nama_Kriteria']; ?>" class="btn btn-success btn-square rounded-0">
+	                <i class="fas fa-plus fa-sm"></i> Masukan Sub Kriteria
+	              </a>
+	            </td>
+	          </tr>
           <?php  
           	endwhile;
           ?>

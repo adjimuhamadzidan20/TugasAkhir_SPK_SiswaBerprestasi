@@ -14,6 +14,7 @@
         data_subkriteria.ID_Kriteria = data_kriteria.ID_Kriteria WHERE Nama_Kriteria = '$krit'";
         $sub = mysqli_query($koneksi_db, $data_sub);
 
+        // fungsi simpan
         if (isset($_POST['simpan'])) {
             $idKriteria = $data['ID_Kriteria'];
             $subkriteria = htmlspecialchars($_POST['sub_kriteria']);
@@ -27,7 +28,7 @@
             // validasi input sub kriteria sudah ada atau belum
             if ($id > 0) {
                 echo '<script>
-                    alert("Subkriteria sudah ada!");
+                    alert("Sub kriteria sudah ada!");
                     document.location.href = "index.php?page=tambah_subkriteria&idkriteria='. $_GET['idkriteria'] .
                     '&kriteria='. $_GET['kriteria'] .'";
                 </script>';
@@ -36,6 +37,7 @@
                 mysqli_query($koneksi_db, $sql);
 
                 echo '<script>
+                    alert("Sub kriteria berhasil tersimpan!");
                     document.location.href = "index.php?page=tambah_subkriteria&idkriteria='. $_GET['idkriteria'] .
                     '&kriteria='. $_GET['kriteria'] .'";
                 </script>';
@@ -53,6 +55,7 @@
             $query = mysqli_query($koneksi_db, $sqlDel);
 
             echo '<script>
+                alert("Sub kriteria berhasil terhapus!");
                 document.location.href = "index.php?page=sub_kriteria";
             </script>';
         }

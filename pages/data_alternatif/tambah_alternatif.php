@@ -1,4 +1,5 @@
 <?php
+    // fungsi simpan
     if (isset($_POST['simpan'])) {
         $nisn = htmlspecialchars($_POST['nisn']);
         $siswa = htmlspecialchars($_POST['nama_siswa']);
@@ -19,6 +20,7 @@
             mysqli_query($koneksi_db, $sql);
 
             echo '<script>
+                alert("Alternatif berhasil tersimpan!");
                 document.location.href = "index.php?page=data_siswa";
             </script>';
         }

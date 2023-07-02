@@ -11,8 +11,7 @@
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-3">
-    <h1 class="h4 mb-0 text-gray-800 text-uppercase">SPK Siswa Berprestasi Metode SAW<br>
-    SMKN 9 Kota Bekasi</h1>
+    <h1 class="h4 mb-0 text-gray-800 text-uppercase">SPK Menentukan Siswa Berprestasi<br>Metode Simple Additive Weighting (SAW)</h1>
 </div>
 
 <!-- Content Row -->

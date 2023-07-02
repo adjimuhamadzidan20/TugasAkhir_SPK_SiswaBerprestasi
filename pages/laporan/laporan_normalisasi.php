@@ -1,7 +1,6 @@
 <?php  
   $normali = mysqli_query($koneksi_db, "SELECT Nama_Kriteria FROM data_kriteria");
   $siswa = mysqli_query($koneksi_db, "SELECT ID_Alter, NISN, Nama_Siswa FROM data_alternatif");
-
 ?>
 
 <!-- Page Heading -->
@@ -39,7 +38,7 @@
                 $hasil = mysqli_query($koneksi_db, "SELECT Hasil_Norm FROM hasil_normalisasi 
                 WHERE ID_Alter = '$sis[ID_Alter]'");
 
-                      while ($nilai = mysqli_fetch_assoc($hasil)) :
+                while ($nilai = mysqli_fetch_assoc($hasil)) :
               ?>
                 <td><?= $nilai['Hasil_Norm']; ?></td>
               <?php endwhile; ?>

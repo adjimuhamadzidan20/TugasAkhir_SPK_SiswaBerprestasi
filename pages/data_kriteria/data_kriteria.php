@@ -1,4 +1,4 @@
-<?php  
+<?php
 	$sql = "SELECT * FROM data_kriteria";
 	$kriteria = mysqli_query($koneksi_db, $sql);
 
@@ -7,8 +7,9 @@
 		$namaKrit = $_GET['delete'];
 		$sqlDel = "DELETE FROM data_kriteria WHERE Nama_Kriteria = '$namaKrit'";
 		$query = mysqli_query($koneksi_db, $sqlDel);
-
+		
 		echo '<script>
+						alert("Kriteria berhasil terhapus!");
             document.location.href = "index.php?page=data_kriteria";
         </script>';
 	}
@@ -18,10 +19,6 @@
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-1">
 	<h1 class="h3 text-gray-800">Data Kriteria</h1>
-</div>
-
-<div class="alert alert-primary" role="alert">
-  A simple primary alert—check it out!
 </div>
 
 <!-- DataTales Example -->

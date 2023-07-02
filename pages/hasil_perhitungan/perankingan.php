@@ -2,7 +2,6 @@
 	$pref = mysqli_query($koneksi_db, "SELECT hasil_preferensi.ID_Pref, hasil_preferensi.ID_Alter, data_alternatif.Nama_Siswa, 
 	hasil_preferensi.hasil_pref FROM hasil_preferensi INNER JOIN data_alternatif ON 
 	hasil_preferensi.ID_Alter = data_alternatif.ID_Alter ORDER BY hasil_pref DESC");
-
 ?>
 
 <div class="card-header bg-white py-3 d-flex align-items-center justify-content-between">

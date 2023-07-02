@@ -24,6 +24,7 @@
     $tes = mysqli_fetch_row($total);
     $jumlah = $tes[0];
     
+    // fungsi simpan
     if (isset($_POST['simpan'])) {
         $i = 1;
         while ($i <= $jumlah) {
@@ -31,16 +32,14 @@
             $kriteria = $row[$i-1];
             $nilai = htmlspecialchars($_POST['nilai'][$i-1]);
 
-            // var_dump($alternatif .' & '.$kriteria. ' & ' .$nilai);
-
             $sql = "INSERT INTO data_penilaian VALUES ('', '$alternatif', '$kriteria', '$nilai')";
             $tes = mysqli_query($koneksi_db, $sql);
 
             $i++;
         }
 
-        // die();
         echo '<script>
+            alert("Penilaian berhasil tersimpan!");
             document.location.href = "index.php?page=data_penilaian";
         </script>';
     }

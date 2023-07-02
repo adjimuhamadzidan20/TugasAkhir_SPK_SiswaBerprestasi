@@ -2,10 +2,7 @@
 	$sql = "SELECT * FROM data_alternatif";
 	$siswa = mysqli_query($koneksi_db, $sql);
 
-  // $hasil = mysqli_query($koneksi_db, "SELECT Alternatif FROM data_penilaian WHERE Alternatif = '$_GET[cek]'");
-  // $cek = mysqli_fetch_assoc($hasil);
-
-	// melihat penilaian yang telah diinput
+	// fungsi melihat penilaian yang telah diinput
   if (isset($_GET['cek'])) {
   	$namaKriteria = "SELECT data_penilaian.ID_Penilaian, data_alternatif.ID_Alter, data_alternatif.Nama_Siswa, data_penilaian.
   	ID_Kriteria, data_kriteria.Nama_Kriteria, data_penilaian.Nilai FROM data_penilaian INNER JOIN data_alternatif ON 
@@ -70,7 +67,7 @@
 	                    </a>
 	                  <?php } else if ($jml > 0){ ?>
 	                  	<button class="btn btn-success btn-square rounded-0" title="Penilaian Telah Diinput" readonly="readonly">
-	                    	<i class="fas fa-check fa-sm"></i> Penilaian Terinput
+	                    	<i class="fas fa-check fa-sm"></i> Penilaian
 	                    </button>
 	                  <?php } ?>  
                   </td>
@@ -95,9 +92,6 @@
 	<div class="col">
 		<div class="card mb-4 rounded-0">
 	    <div class="card-header bg-white py-3 d-flex align-items-center justify-content-between">
-    		<!-- <a href="index.php" class="btn btn-primary btn-square btn-sm">
-           Tambah Data
-        </a> -->
         <h6 class="m-0 text-gray-800">Lihat Penilaian</h6>
 	    </div>
 	    <div class="card-body">

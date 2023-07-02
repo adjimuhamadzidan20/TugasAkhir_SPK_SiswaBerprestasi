@@ -17,6 +17,7 @@
         mysqli_query($koneksi_db, $sql);
 
         echo '<script>
+            alert("Alternatif berhasil terubah!");
             document.location.href = "index.php?page=data_siswa";
         </script>';
     }

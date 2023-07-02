@@ -9,6 +9,7 @@
 		$query = mysqli_query($koneksi_db, $sqlDel);
 
 		echo '<script>
+						alert("Alternatif berhasil terhapus!");
             document.location.href = "index.php?page=data_siswa";
         </script>';
 	}

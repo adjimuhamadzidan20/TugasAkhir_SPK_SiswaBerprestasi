@@ -36,30 +36,51 @@
         * {
             font-family: sans-serif;
         }
+        
+        .btn-primary {
+            background-color: #01a3a4;
+            border-color: #01a3a4;
+        }
+
+        .btn-primary:hover {
+            background-color: #039798;
+            border-color: #039798;
+        }
+
+        a {
+            color: #01a3a4;
+        }
+
+        a:hover {
+            color: #039798;
+        }
+
+
     </style>
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient-white">
 
     <div class="container my-5">
-        <h4 class="text-white text-center mb-3 text-uppercase">Sistem Penunjang Keputusan<br>Menentukan Siswa Berprestasi</h4>
+        <h4 class="text-gray-800 text-center mb-3 text-uppercase">SPK Penentuan Siswa Berprestasi</h4>
 
         <!-- Outer Row -->
         <div class="row justify-content-center">
 
             <div class="col-5">
 
-                <div class="card o-hidden border-0 shadow-lg rounded-0">
+                <div class="card o-hidden border-0 shadow rounded-0">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
                             <!-- <div class="col-lg-6 d-none d-lg-block bg-login-image"></div> -->
                             <div class="col">
                                 <div class="p-5">
-                                    <!-- <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
-                                    </div> -->
+                                    <div class="text-center">
+                                        <h1 class="h5 text-gray-800 mb-4">Admin Area</h1>
+                                        <!-- <img src="assets/img/SMKN9_Bekasi.png" alt="" class="img-profile w-25"> -->
+                                    </div>
                                     <p>
                                         <?php
                                             if (!isset($notif)) {
@@ -87,7 +108,7 @@
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-user btn-block rounded-0" name="masuk">
-                                            Masuk
+                                            <i class="fas fa-sign-in-alt fa-fw"></i> Masuk
                                         </button>
                                         <hr>
                                        <!--  <a href="index.html" class="btn btn-google btn-user btn-block">

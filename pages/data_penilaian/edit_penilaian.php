@@ -4,9 +4,7 @@
     data_penilaian.ID_Kriteria, data_kriteria.Nama_Kriteria, data_penilaian.Nilai FROM data_penilaian INNER JOIN 
     data_alternatif ON data_penilaian.ID_Alter = data_alternatif.ID_Alter INNER JOIN data_kriteria ON 
     data_penilaian.ID_Kriteria = data_kriteria.ID_Kriteria WHERE Nama_Siswa = '$idAlt'";
-
     $quePen = mysqli_query($koneksi_db, $datPenilai);
-    // $resPen = mysqli_fetch_assoc($quePen);
 
     // menangkap data alternatif sesuai nama siswa
     $namaSiswa = "SELECT * FROM data_alternatif WHERE ID_Alter = '$_GET[id]'";
@@ -41,8 +39,6 @@
             $idkriteria = htmlspecialchars($_POST['id_kriteria'][$i-1]);
             $nilai = htmlspecialchars($_POST['nilai'][$i-1]);
 
-            // var_dump($nilai);
-
             $sql = "UPDATE data_penilaian SET ID_Alter = '$idalternatif', ID_Kriteria = '$idkriteria', Nilai = '$nilai'
             WHERE ID_Penilaian = '$idPenilaian'";
             $tes = mysqli_query($koneksi_db, $sql);
@@ -50,8 +46,8 @@
             $i++;
         }
 
-        // die();
         echo '<script>
+            alert("Penilaian berhasil terubah!");
             document.location.href = "index.php?page=data_penilaian";
         </script>';
     }
@@ -93,7 +89,8 @@
 
                             while ($res = mysqli_fetch_assoc($datasub)) :
                           ?>  
-                            <option value="<?= $res['Nilai']; ?>"><?= $res['Nilai']; ?> - <?= $res['Keterangan']; ?></option>
+                            <option value="<?= $res['Nilai']; ?>"><?= $res['Nama_Subkriteria']; ?> - <?= $res['Nilai']; ?> - 
+                            <?= $res['Keterangan']; ?></option>
                           <?php endwhile; ?>
                         </select>
                     </div>

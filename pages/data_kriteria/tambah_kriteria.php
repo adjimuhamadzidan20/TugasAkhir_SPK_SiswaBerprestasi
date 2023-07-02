@@ -1,4 +1,5 @@
-<?php   
+<?php
+    // fungsi simpan  
     if (isset($_POST['simpan'])) {
         $kriteria = htmlspecialchars($_POST['nama_kriteria']);
         $bobot = htmlspecialchars($_POST['bobot']);
@@ -18,11 +19,11 @@
             mysqli_query($koneksi_db, $sql);
 
             echo '<script>
+                alert("Kriteria berhasil ditambahkan!");
                 document.location.href = "index.php?page=data_kriteria";
             </script>';
         }
     }
-
 ?>
 
 <!-- Page Heading -->

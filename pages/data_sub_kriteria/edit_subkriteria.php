@@ -17,6 +17,7 @@
         mysqli_query($koneksi_db, $sql);
 
         echo '<script>
+            alert("Sub kriteria berhasil terubah!");
             document.location.href = "index.php?page=sub_kriteria";
         </script>';
     }
