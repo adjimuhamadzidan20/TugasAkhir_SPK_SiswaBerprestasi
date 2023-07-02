@@ -189,9 +189,6 @@
 <!-- DataTales Example -->
 <div class="card mb-3 rounded-0">
   <div class="card-header bg-white py-3 d-flex align-items-center justify-content-between">
-		<!-- <a href="index.php?page=tambah_alter" class="btn btn-primary btn-square btn-sm">
-       Tambah Alternatif
-    </a> -->
     <h6 class="m-0 text-gray-800">Tabel Penilaian Awal</h6>
   </div>
   <div class="card-body">
