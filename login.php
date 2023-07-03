@@ -1,10 +1,52 @@
-<?php  
-    if (isset($_POST['masuk'])) {
+<?php
+    session_start();  
+    require 'config/connect_db.php';
 
-        if ($_POST['username'] == 'admin' && $_POST['password'] == 'admin') {
-            header('Location: index.php');
+    // periksa cookie remember me
+    if (isset($_COOKIE['ID']) && isset($_COOKIE['Key'])) {
+        $query = mysqli_query($koneksi_db, "SELECT username FROM admin WHERE ID_User = '$_COOKIE[ID]'");
+        $res = mysqli_fetch_assoc($query);
+
+        if ($_COOKIE['Key'] === hash('sha256', $res['username'])) {
+            $_SESSION['login'] = true;
+        }
+    }
+
+    // cegah masuk ke dashboard (index)
+    if (isset($_SESSION['login'])) {
+        header('Location: index.php');
+        exit;
+    }
+
+    // fungsi masuk (login)
+    if (isset($_POST['masuk'])) {
+        $username = htmlspecialchars($_POST['username']);
+        $password = htmlspecialchars($_POST['password']);
+
+        $querySql = "SELECT * FROM admin WHERE username = '$username'";
+        $res = mysqli_query($koneksi_db, $querySql);
+        $admin = mysqli_fetch_assoc($res);
+
+        // validasi user / admin
+        if (mysqli_num_rows($res) === 1) {
+            if (md5($password, TRUE)) {
+                // nama username
+                $_SESSION['user'] = $admin['username'];
+                $_SESSION['login'] = true;
+
+                // remember me
+                if ($_POST['remember']) {
+                    setcookie('ID', $admin['ID_User'], time()+60);
+                    setcookie('Key', hash('sha256', $admin['username']), time()+60);
+                }
+
+                header('Location: index.php');
+                exit;
+            }
         } else {
-            $notif = 'Username dan password anda salah!';
+            echo "<script>
+                  alert('Username atau password tidak sesuai!');
+                </script>";
         }
     }
 
@@ -55,7 +97,6 @@
             color: #039798;
         }
 
-
     </style>
 
 </head>
@@ -78,31 +119,22 @@
                             <div class="col">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h5 text-gray-800 mb-4">Admin Area</h1>
+                                        <h1 class="h5 text-gray-800 mb-4">Admin Login</h1>
                                         <!-- <img src="assets/img/SMKN9_Bekasi.png" alt="" class="img-profile w-25"> -->
                                     </div>
-                                    <p>
-                                        <?php
-                                            if (!isset($notif)) {
-                                                echo '';
-                                            } else {
-                                                echo $notif;
-                                            } 
-                                        ?>
-                                    </p>
                                     <form class="user" method="post">
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user rounded-0"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Username" name="username">
+                                                placeholder="Username" name="username" required>
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user rounded-0"
-                                                id="exampleInputPassword" placeholder="Password" name="password">
+                                                id="exampleInputPassword" placeholder="Password" name="password" required>
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck" name="remember">
                                                 <label class="custom-control-label" for="customCheck">Remember
                                                     Me</label>
                                             </div>
@@ -119,12 +151,12 @@
                                         </a> -->
                                     </form>
                                     <!-- <hr> -->
-                                    <div class="text-center">
+                                    <!-- <div class="text-center">
                                         <a class="small" href="forgot-password.html">Forgot Password?</a>
                                     </div>
                                     <div class="text-center">
                                         <a class="small" href="register.html">Create an Account!</a>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>

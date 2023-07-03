@@ -1,3 +1,13 @@
+<?php  
+    session_start();
+
+    // cegah masuk / kembali ke hal login
+    if (!isset($_SESSION['login'])) {
+        header('Location: login.php');
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -145,7 +155,7 @@
                 <div class="modal-body">Klik "Logout" untuk meninggalkan dashboard</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary rounded-0" type="button" data-dismiss="modal">Kembali</button>
-                    <a class="btn btn-success rounded-0" href="login.php">Logout</a>
+                    <a class="btn btn-success rounded-0" href="logout.php">Logout</a>
                 </div>
             </div>
         </div>

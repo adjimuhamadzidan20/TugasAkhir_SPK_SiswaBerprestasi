@@ -36,7 +36,7 @@
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <img class="img-profile rounded-circle"
                 src="assets/img/user_2.png">
-            <span class="ml-2 d-none d-lg-inline text-gray-600 small">Douglas McGeebr | Admin</span>
+            <span class="ml-2 d-none d-lg-inline text-gray-600 small"><?= $_SESSION['user']; ?> | Admin</span>
         </a>
     </li>
 
