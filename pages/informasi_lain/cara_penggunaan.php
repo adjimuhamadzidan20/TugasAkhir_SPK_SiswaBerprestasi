@@ -8,7 +8,7 @@
     <div class="card-body" style="padding: 35px;">
         <h5 class="mb-3">Langkah-langkah penggunaan :</h5>
         <div class="text-justify font-weight-light pr-4">
-            <ul type="square">
+            <ol>
                 <li class="mb-2">
                     <b>Pertama</b>, menambahkan dahulu <b>Data Kriteria</b> dengan memasukan (input) nama kriterianya, kemudian masukkan nilai bobot (untuk nilai bobot dapat ditentukan berdasarkan seberapa kepentingannya), lalu pilih atribut (Benefit/Cost), Benefit yaitu mencari nilai tertinggi (MAX), sedangkan Cost mencari nilai terendah (MIN), setelah diinputkan klik <b>Simpan</b>. Untuk mengisi <b>Data Kriteria</b> ada pada bagian pilihan <b>Menu Data > Data Kriteria</b>.
                 </li>
@@ -33,7 +33,7 @@
                 <li>
                     <b>*Note</b> : Jika ada perubahan pada data baik itu mengedit, menambah data terbaru, menghapus atau apa pun cukup mengklik kembali button <b>Hitung</b> untuk me-generate ulang kembali hasil perhitungan, agar hasil sebelumnya terupdate oleh hasil perhitungan yang terbaru.
                 </li>
-            </ul> 
+            </ol> 
         </div>
     </div>
 </div>

@@ -1,12 +1,24 @@
 <?php  
-
+	// fungsi reset hasil perhitungan
 	if (isset($_POST['reset'])) {
-		$tabNorm = mysqli_query($koneksi_db, "TRUNCATE TABLE hasil_normalisasi");
-		$tabPref = mysqli_query($koneksi_db, "TRUNCATE TABLE hasil_preferensi");
+		$jmlNorm = mysqli_query($koneksi_db, "SELECT * FROM hasil_normalisasi");
+		$jmlPref = mysqli_query($koneksi_db, "SELECT * FROM hasil_preferensi");
+		$row1 = mysqli_num_rows($jmlNorm);
+		$row2 = mysqli_num_rows($jmlPref);
 
-		echo '<script>
+		if ($row1 == 0 && $row2 == 0) {
+			echo '<script>
+						alert("Hasil perhitungan masih kosong!");
             document.location.href = "index.php?page=hasil_perhitungan";
           </script>';
+		} else {
+			$tabNorm = mysqli_query($koneksi_db, "TRUNCATE TABLE hasil_normalisasi");
+			$tabPref = mysqli_query($koneksi_db, "TRUNCATE TABLE hasil_preferensi");
+
+			echo '<script>
+	            document.location.href = "index.php?page=hasil_perhitungan";
+	          </script>';
+		}
 	}
 
 ?>

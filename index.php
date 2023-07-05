@@ -18,6 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="icon" type="image/x-icon" href="assets/img/SMKN9_Bekasi.ico">
 
     <title>SPK Siswa Berprestasi - Dashboard</title>
 
@@ -34,28 +35,25 @@
     <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
     <style type="text/css">
-        * {
-            font-family: sans-serif;
-        }
-
         .sidebar {
-            background-color: #130f40;
+            background-color: #018ED6;
         }
 
         .pagination .active .page-link {
-            background-color: #130f40;
-            border-color: #130f40;
+            background-color: #018ED6;
+            border-color: #018ED6;
         }
 
         .btn-success {
-            background-color: #01a3a4;
-            border-color: #01a3a4;
+            background-color: #018ED6;
+            border-color: #018ED6;
         }
 
         .btn-success:hover {
-            background-color: #039798;
-            border-color: #039798;
+            background-color: #0080C2;
+            border-color: #0080C2;
         }
+        
     </style>
 
 </head>
@@ -154,8 +152,8 @@
                 </div>
                 <div class="modal-body">Klik "Logout" untuk meninggalkan dashboard</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary rounded-0" type="button" data-dismiss="modal">Kembali</button>
-                    <a class="btn btn-success rounded-0" href="logout.php">Logout</a>
+                    <button class="btn btn-secondary rounded-0" type="button" data-dismiss="modal"><i class="fas fa-chevron-left fa-sm"></i> Kembali</button>
+                    <a class="btn btn-success rounded-0" href="logout.php"><i class="fas fa-sign-out-alt fa-sm"></i> Logout</a>
                 </div>
             </div>
         </div>

@@ -83,6 +83,10 @@
 			include 'pages/laporan/laporan_perankingan.php';
 		}
 
+		else {
+			include 'pages/error_404/error_404.php';
+		}
+
 	} else {
 		include 'pages/dashboard/dashboard.php';
 	}

@@ -1,55 +1,11 @@
 <?php
     session_start();  
-    require 'config/connect_db.php';
 
-    // periksa cookie remember me
-    if (isset($_COOKIE['ID']) && isset($_COOKIE['Key'])) {
-        $query = mysqli_query($koneksi_db, "SELECT username FROM admin WHERE ID_User = '$_COOKIE[ID]'");
-        $res = mysqli_fetch_assoc($query);
-
-        if ($_COOKIE['Key'] === hash('sha256', $res['username'])) {
-            $_SESSION['login'] = true;
-        }
-    }
-
-    // cegah masuk ke dashboard (index)
+    // // cegah masuk ke dashboard (index)
     if (isset($_SESSION['login'])) {
         header('Location: index.php');
         exit;
     }
-
-    // fungsi masuk (login)
-    if (isset($_POST['masuk'])) {
-        $username = htmlspecialchars($_POST['username']);
-        $password = htmlspecialchars($_POST['password']);
-
-        $querySql = "SELECT * FROM admin WHERE username = '$username'";
-        $res = mysqli_query($koneksi_db, $querySql);
-        $admin = mysqli_fetch_assoc($res);
-
-        // validasi user / admin
-        if (mysqli_num_rows($res) === 1) {
-            if (md5($password, TRUE)) {
-                // nama username
-                $_SESSION['user'] = $admin['username'];
-                $_SESSION['login'] = true;
-
-                // remember me
-                if ($_POST['remember']) {
-                    setcookie('ID', $admin['ID_User'], time()+60);
-                    setcookie('Key', hash('sha256', $admin['username']), time()+60);
-                }
-
-                header('Location: index.php');
-                exit;
-            }
-        } else {
-            echo "<script>
-                  alert('Username atau password tidak sesuai!');
-                </script>";
-        }
-    }
-
 ?>
 
 <!DOCTYPE html>
@@ -62,6 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="icon" type="image/x-icon" href="assets/img/SMKN9_Bekasi.ico">
 
     <title>SPK Siswa Berprestasi - Login</title>
 
@@ -75,26 +32,18 @@
     <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
 
     <style type="text/css">
-        * {
-            font-family: sans-serif;
+        .container {
+            margin-top: 86px;
         }
         
-        .btn-primary {
-            background-color: #01a3a4;
-            border-color: #01a3a4;
+        .btn-success {
+            background-color: #018ED6;
+            border-color: #018ED6;
         }
 
-        .btn-primary:hover {
-            background-color: #039798;
-            border-color: #039798;
-        }
-
-        a {
-            color: #01a3a4;
-        }
-
-        a:hover {
-            color: #039798;
+        .btn-success:hover {
+            background-color: #0080C2;
+            border-color: #0080C2;
         }
 
     </style>
@@ -103,8 +52,8 @@
 
 <body class="bg-gradient-white">
 
-    <div class="container my-5">
-        <h4 class="text-gray-800 text-center mb-3 text-uppercase">SPK Penentuan Siswa Berprestasi</h4>
+    <div class="container">
+        <h4 class="text-dark text-center mb-2 text-uppercase">SPK Penentuan Siswa Berprestasi</h4>
 
         <!-- Outer Row -->
         <div class="row justify-content-center">
@@ -122,7 +71,17 @@
                                         <h1 class="h5 text-gray-800 mb-4">Admin Login</h1>
                                         <!-- <img src="assets/img/SMKN9_Bekasi.png" alt="" class="img-profile w-25"> -->
                                     </div>
-                                    <form class="user" method="post">
+
+                                    <?php 
+                                        if (isset($_SESSION['status'])) {
+                                            echo '<div class="alert alert-danger rounded-0 small" role="alert">'
+                                                    . $_SESSION['status'] .
+                                                  '</div>';
+                                            unset($_SESSION['status']);
+                                        }  
+                                    ?>
+
+                                    <form class="user" method="post" action="config/proses_login.php">
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user rounded-0"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
@@ -139,7 +98,7 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary btn-user btn-block rounded-0" name="masuk">
+                                        <button type="submit" class="btn btn-success btn-user btn-block rounded-0" name="masuk">
                                             <i class="fas fa-sign-in-alt fa-fw"></i> Masuk
                                         </button>
                                         <hr>
