@@ -18,32 +18,35 @@
     exit;
   }
 
-  $username = htmlspecialchars($_POST['username']);
-  $password = htmlspecialchars($_POST['password']);
+  if (isset($_POST['masuk'])) {
+    $username = htmlspecialchars($_POST['username']);
+    $password = htmlspecialchars($_POST['password']);
 
-  $querySql = "SELECT * FROM admin WHERE username = '$username'";
-  $res = mysqli_query($koneksi_db, $querySql);
-  $admin = mysqli_fetch_assoc($res);
+    $querySql = "SELECT * FROM admin WHERE username = '$username'";
+    $res = mysqli_query($koneksi_db, $querySql);
+    $admin = mysqli_fetch_assoc($res);
 
-  // validasi user / admin
-  if (mysqli_num_rows($res) === 1) {
-    if (md5($password, TRUE)) {
-      // nama username
-      $_SESSION['user'] = $admin['username'];
-      $_SESSION['login'] = true;
+    // validasi user / admin
+    if (mysqli_num_rows($res) === 1) {
+      if (md5($password, TRUE)) {
+        // nama username
+        $_SESSION['user'] = $admin['username'];
+        $_SESSION['login'] = true;
 
-      // remember me
-      if ($_POST['remember']) {
-          setcookie('ID', $admin['ID_User'], time()+60);
-          setcookie('Key', hash('sha256', $admin['username']), time()+60);
+        // remember me
+        if ($_POST['remember']) {
+            setcookie('ID', $admin['ID_User'], time()+60, '/');
+            setcookie('Key', hash('sha256', $admin['username']), time()+60, '/');
+        }
+
+        header('Location: ../index.php');
+        exit;
       }
-
-      header('Location: ../index.php');
+    } else {
+      $_SESSION['status'] = 'Username atau password tidak sesuai!';
+      header('Location: ../login.php');
       exit;
     }
-  } else {
-    $_SESSION['status'] = 'Username atau password tidak sesuai!';
-    header('Location: ../login.php');
-    exit;
   }
+  
 ?>
