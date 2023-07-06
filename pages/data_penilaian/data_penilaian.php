@@ -1,8 +1,6 @@
 <?php  
 	$sql = "SELECT * FROM data_alternatif";
 	$siswa = mysqli_query($koneksi_db, $sql);
-
-
 ?>
 
 <!-- Page Heading -->
@@ -20,10 +18,10 @@
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>Kode</th>
-            <th>Nama Siswa</th>
-            <th>Penilaian</th>
-            <th>Opsi</th>
+            <th class="text-nowrap">Kode</th>
+            <th class="text-nowrap">Nama Siswa</th>
+            <th class="text-nowrap">Penilaian</th>
+            <th class="text-nowrap">Opsi</th>
           </tr>
         </thead>
         <tbody>
@@ -33,9 +31,9 @@
       			$no++;	
       		?>
             <tr>
-              <td><?= 'A'. $no; ?></td>
-              <td><?= $alter['Nama_Siswa']; ?></td>
-              <td class="text-center">
+              <td class="text-nowrap"><?= 'A'. $no; ?></td>
+              <td class="text-nowrap"><?= $alter['Nama_Siswa']; ?></td>
+              <td class="text-center text-nowrap">
               	<?php  
               		$jmlData = mysqli_query($koneksi_db, "SELECT * FROM data_penilaian WHERE ID_Alter = '$alter[ID_Alter]'");
               		$jml = mysqli_num_rows($jmlData);
@@ -51,7 +49,7 @@
                   </button>
                 <?php } ?>  
               </td>
-              <td class="text-center">
+              <td class="text-center text-nowrap">
               	<button type="button" data-siswa="<?= $alter['Nama_Siswa']; ?>" class="cek btn btn-success btn-square rounded-0" title="Lihat Penilaian">
                 	<i class="fas fa-eye"></i>
                 </button>
@@ -69,12 +67,12 @@
   </div>
 </div>
 
-<!-- Modal -->
+<!-- Modal lihat penilaian -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content rounded-0">
       <div class="modal-header">
-        <h6 class="modal-title" id="exampleModalLabel">Lihat Penilaian</h6>
+        <h6 class="modal-title text-gray-800" id="exampleModalLabel">Lihat Penilaian</h6>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

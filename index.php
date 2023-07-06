@@ -73,7 +73,7 @@
                     <!-- <h1 class="h2 font-weight-bold my-auto">SPK</h1> -->
                     <img src="assets/img/SMKN9_Bekasi.png" alt="" class="img-profile w-100">
                 </div>
-                <div class="sidebar-brand-text mx-2 text-left font-weight-normal">SPK Siswa Berprestasi</div>
+                <div class="sidebar-brand-text mx-2 text-left font-weight-bold">SPK Siswa Berprestasi</div>
             </a>
 
             <!-- Divider -->

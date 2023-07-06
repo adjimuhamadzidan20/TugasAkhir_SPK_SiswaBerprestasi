@@ -11,12 +11,12 @@
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
                 <tr>
-                    <th>No</th>
-                    <th>Alternatif</th>
+                    <th class="text-nowrap">No</th>
+                    <th class="text-nowrap">Alternatif</th>
                     <?php  
                         while ($krit = mysqli_fetch_assoc($normali)) :
                     ?>
-                        <th><?= $krit['Nama_Kriteria']; ?></th>
+                        <th class="text-nowrap"><?= $krit['Nama_Kriteria']; ?></th>
                     <?php endwhile; ?>
                 </tr>
             </thead>
@@ -27,15 +27,15 @@
                     $no++;
                 ?>
                 <tr>
-                    <td><?= $no; ?></td>
-                    <td><?= $sis['Nama_Siswa']; ?></td>
+                    <td class="text-nowrap"><?= $no; ?></td>
+                    <td class="text-nowrap"><?= $sis['Nama_Siswa']; ?></td>
                     <?php  
                         $hasil = mysqli_query($koneksi_db, "SELECT Hasil_Norm FROM hasil_normalisasi 
                         WHERE ID_Alter = '$sis[ID_Alter]'");
 
                         while ($nilai = mysqli_fetch_assoc($hasil)) :
                     ?>
-                        <td><?= $nilai['Hasil_Norm']; ?></td>
+                        <td class="text-nowrap"><?= $nilai['Hasil_Norm']; ?></td>
                     <?php endwhile; ?>
                 </tr>
                 <?php endwhile; ?>

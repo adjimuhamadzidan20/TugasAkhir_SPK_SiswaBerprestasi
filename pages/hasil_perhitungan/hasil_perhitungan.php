@@ -29,14 +29,14 @@
 </div>
 
 <nav aria-label="...">
-  <ul class="pagination pagination-md">
-    <li class="page-item" aria-current="page">
+  <ul class="pagination pagination-md flex-wrap flex-md-nowrap">
+    <li class="page-item w-100" aria-current="page">
       <a class="page-link rounded-0 text-gray-800" href="index.php?page=hasil_perhitungan&hasil=normalisasi">Hasil Normalisasi</a>
     </li>
-    <li class="page-item">
+    <li class="page-item w-100">
     	<a class="page-link rounded-0 text-gray-800" href="index.php?page=hasil_perhitungan&hasil=preferensi">Hasil Preferensi</a>
     </li>
-    <li class="page-item">
+    <li class="page-item w-100">
     	<a class="page-link rounded-0 text-gray-800" href="index.php?page=hasil_perhitungan&hasil=perankingan">Perankingan</a>
     </li>
   </ul>

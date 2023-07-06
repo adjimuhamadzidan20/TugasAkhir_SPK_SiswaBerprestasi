@@ -196,11 +196,11 @@
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>Alternatif</th>
+            <th class="text-nowrap">Alternatif</th>
             <?php 
         			while ($res1 = mysqli_fetch_assoc($datKrit)) :
         		?>
-            	<th><?= $res1['Nama_Kriteria']; ?></th>
+            	<th class="text-nowrap"><?= $res1['Nama_Kriteria']; ?></th>
             <?php endwhile; ?>
           </tr>   
         </thead>
@@ -209,14 +209,14 @@
       			while ($res2 = mysqli_fetch_assoc($datSiswa)) :
       		?>
             <tr>
-              <td><?= $res2['Nama_Siswa']; ?></td>
+              <td class="text-nowrap"><?= $res2['Nama_Siswa']; ?></td>
               <?php
               	$nilaiSis = "SELECT Nilai FROM data_penilaian WHERE ID_Alter = '$res2[ID_Alter]'";
 								$hasilSis = mysqli_query($koneksi_db, $nilaiSis);
 
           			while ($res3 = mysqli_fetch_assoc($hasilSis)) :
           		?>
-              	<td><?= $res3['Nilai']; ?></td>
+              	<td class="text-nowrap"><?= $res3['Nilai']; ?></td>
               <?php endwhile; ?>
             </tr>
         	<?php endwhile; ?>  

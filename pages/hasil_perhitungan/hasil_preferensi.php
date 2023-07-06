@@ -12,9 +12,9 @@
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
                 <tr>
-                    <th>No</th>
-                    <th>Nama Siswa</th>
-                    <th>Hasil Preferensi</th>
+                    <th class="text-nowrap">No</th>
+                    <th class="text-nowrap">Nama Siswa</th>
+                    <th class="text-nowrap">Hasil Preferensi</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,9 +24,9 @@
         			$no++;	
         		?>
                 <tr>
-                    <td><?= $no; ?></td>
-                    <td><?= $res['Nama_Siswa']; ?></td>
-                    <td><?= $res['hasil_pref']; ?></td>  
+                    <td class="text-nowrap"><?= $no; ?></td>
+                    <td class="text-nowrap"><?= $res['Nama_Siswa']; ?></td>
+                    <td class="text-nowrap"><?= $res['hasil_pref']; ?></td>  
                 </tr>
               	<?php endwhile; ?>
             </tbody>

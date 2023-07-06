@@ -6,8 +6,8 @@
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-  <h5 class="mb-3 text-gray-800 my-auto">Laporan Hasil Perankingan</h5>
-  <a href="assets/report/report_perankingan.php" class="d-none d-sm-inline-block btn btn-sm btn-success rounded-0" target="_blank">
+  <h5 class="mb-3 text-gray-800 my-sm-auto">Laporan Hasil Perankingan</h5>
+  <a href="assets/report/report_perankingan.php" class="d-inline-block btn btn-sm btn-success rounded-0" target="_blank">
   	<i class="fas fa-file-pdf fa-sm"></i> Cetak Laporan
 	</a>
 </div>
@@ -19,11 +19,11 @@
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-        		<th>NISN</th>
-            <th>Nama Siswa</th>
-            <th>Kelas</th>
-            <th>Nilai Akhir</th>
-            <th>Peringkat</th>
+        		<th class="text-nowrap">NISN</th>
+            <th class="text-nowrap">Nama Siswa</th>
+            <th class="text-nowrap">Kelas</th>
+            <th class="text-nowrap">Nilai Akhir</th>
+            <th class="text-nowrap">Peringkat</th>
           </tr>
         </thead>
         <tbody>
@@ -33,11 +33,11 @@
       			$no++;	
       		?>
             <tr>
-          		<td><?= $res['NISN']; ?></td>
-              <td><?= $res['Nama_Siswa']; ?></td>
-              <td><?= $res['Kelas']; ?></td>
-              <td><?= $res['hasil_pref']; ?></td>
-              <td><?= $no; ?></td>  
+          		<td class="text-nowrap"><?= $res['NISN']; ?></td>
+              <td class="text-nowrap"><?= $res['Nama_Siswa']; ?></td>
+              <td class="text-nowrap"><?= $res['Kelas']; ?></td>
+              <td class="text-nowrap"><?= $res['hasil_pref']; ?></td>
+              <td class="text-nowrap"><?= $no; ?></td>  
             </tr>
         	<?php endwhile; ?>
         </tbody>

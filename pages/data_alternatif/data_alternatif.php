@@ -27,19 +27,19 @@
 		<a href="index.php?page=tambah_alter" class="btn btn-success btn-square btn-sm rounded-0">
       <i class="fas fa-plus fa-sm"></i> Tambah Alternatif
     </a>
-    <h6 class="m-0 text-gray-800">Tabel Data Alternatif Siswa</h6>
+    <h6 class="m-0 text-gray-800 d-none d-sm-block">Tabel Data Alternatif Siswa</h6>
   </div>
   <div class="card-body">
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>Kode</th>
-            <th>NISN</th>
-            <th>Nama Siswa</th>
-            <th>JK</th>
-            <th>Kelas</th>
-            <th>Opsi</th>
+            <th class="text-nowrap">Kode</th>
+            <th class="text-nowrap">NISN</th>
+            <th class="text-nowrap">Nama Siswa</th>
+            <th class="text-nowrap">JK</th>
+            <th class="text-nowrap">Kelas</th>
+            <th class="text-nowrap">Opsi</th>
           </tr>
         </thead>
         <tbody>
@@ -49,12 +49,12 @@
       			$kode++;
       		?>
             <tr>
-              <td><?= 'A'. $kode; ?></td>
-              <td><?= $alter['NISN']; ?></td>
-              <td><?= $alter['Nama_Siswa']; ?></td>
-              <td><?= $alter['JK']; ?></td>
-              <td><?= $alter['Kelas']; ?></td>
-              <td class="text-center">
+              <td class="text-nowrap"><?= 'A'. $kode; ?></td>
+              <td class="text-nowrap"><?= $alter['NISN']; ?></td>
+              <td class="text-nowrap"><?= $alter['Nama_Siswa']; ?></td>
+              <td class="text-nowrap"><?= $alter['JK']; ?></td>
+              <td class="text-nowrap"><?= $alter['Kelas']; ?></td>
+              <td class="text-center text-nowrap">
               	<a href="index.php?page=edit_alter&edit=<?= $alter['NISN']; ?>&id=<?= $alter['ID_Alter']; ?>" class="btn btn-success btn-square rounded-0">
                     <i class="fas fa-edit"></i>
                 </a>

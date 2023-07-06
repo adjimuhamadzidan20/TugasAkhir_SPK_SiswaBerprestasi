@@ -18,9 +18,9 @@
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>Kode</th>
-            <th>Kriteria</th>
-            <th>Sub Kriteria</th>
+            <th class="text-nowrap">Kode</th>
+            <th class="text-nowrap">Kriteria</th>
+            <th class="text-nowrap">Sub Kriteria</th>
           </tr>
         </thead>
         <tbody>
@@ -30,9 +30,9 @@
       			$no++;
       		?>
 	          <tr>
-	            <td><?= 'C'. $no; ?></td>
-	            <td><?= $krit['Nama_Kriteria']; ?></td>
-	            <td class="text-center">
+	            <td class="text-nowrap"><?= 'C'. $no; ?></td>
+	            <td class="text-nowrap"><?= $krit['Nama_Kriteria']; ?></td>
+	            <td class="text-center text-nowrap">
 	            	<a href="index.php?page=tambah_subkriteria&idkriteria=<?= $krit['ID_Kriteria']; ?>&kriteria=<?= $krit['Nama_Kriteria']; ?>" class="btn btn-success btn-square rounded-0">
 	                <i class="fas fa-plus fa-sm"></i> Masukan Sub Kriteria
 	              </a>

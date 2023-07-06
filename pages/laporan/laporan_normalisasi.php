@@ -5,8 +5,8 @@
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-  <h5 class="mb-3 text-gray-800 my-auto">Laporan Hasil Normalisasi</h5>
-  <a href="assets/report/report_normalisasi.php" class="d-none d-sm-inline-block btn btn-sm btn-success rounded-0" target="_blank">
+  <h5 class="mb-3 text-gray-800 my-sm-auto">Laporan Hasil Normalisasi</h5>
+  <a href="assets/report/report_normalisasi.php" class="d-inline-block btn btn-sm btn-success rounded-0" target="_blank">
   	<i class="fas fa-file-pdf fa-sm"></i> Cetak Laporan
 	</a>
 </div>
@@ -18,12 +18,12 @@
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>NISN</th>
-            <th>Nama Siswa</th>
+            <th class="text-nowrap">NISN</th>
+            <th class="text-nowrap">Nama Siswa</th>
             <?php  
                 while ($krit = mysqli_fetch_assoc($normali)) :
             ?>
-                <th><?= $krit['Nama_Kriteria']; ?></th>
+                <th class="text-nowrap"><?= $krit['Nama_Kriteria']; ?></th>
             <?php endwhile; ?>
           </tr>
         </thead>
@@ -32,15 +32,15 @@
               while ($sis = mysqli_fetch_assoc($siswa)) :
           ?>
             <tr>
-              <td><?= $sis['NISN']; ?></td>
-              <td><?= $sis['Nama_Siswa']; ?></td>
+              <td class="text-nowrap"><?= $sis['NISN']; ?></td>
+              <td class="text-nowrap"><?= $sis['Nama_Siswa']; ?></td>
               <?php  
                 $hasil = mysqli_query($koneksi_db, "SELECT Hasil_Norm FROM hasil_normalisasi 
                 WHERE ID_Alter = '$sis[ID_Alter]'");
 
                 while ($nilai = mysqli_fetch_assoc($hasil)) :
               ?>
-                <td><?= $nilai['Hasil_Norm']; ?></td>
+                <td class="text-nowrap"><?= $nilai['Hasil_Norm']; ?></td>
               <?php endwhile; ?>
             </tr>
           <?php endwhile; ?>

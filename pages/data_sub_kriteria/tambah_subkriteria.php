@@ -99,12 +99,12 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>No</th>
-                        <th>Kriteria</th>
-                        <th>Sub Kriteria</th>
-                        <th>Keterangan</th>
-                        <th>Nilai</th>
-                        <th>Opsi</th>
+                        <th class="text-nowrap">No</th>
+                        <th class="text-nowrap">Kriteria</th>
+                        <th class="text-nowrap">Sub Kriteria</th>
+                        <th class="text-nowrap">Keterangan</th>
+                        <th class="text-nowrap">Nilai</th>
+                        <th class="text-nowrap">Opsi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -114,12 +114,12 @@
                         $no++;
                     ?>
                     <tr>
-                        <td><?= $no; ?></td>
-                        <td><?= $subkrit['Nama_Kriteria']; ?></td>
-                        <td><?= $subkrit['Nama_Subkriteria']; ?></td>
-                        <td><?= $subkrit['Keterangan']; ?></td>
-                        <td><?= $subkrit['Nilai']; ?></td>
-                        <td class="text-center">
+                        <td class="text-nowrap"><?= $no; ?></td>
+                        <td class="text-nowrap"><?= $subkrit['Nama_Kriteria']; ?></td>
+                        <td class="text-nowrap"><?= $subkrit['Nama_Subkriteria']; ?></td>
+                        <td class="text-nowrap"><?= $subkrit['Keterangan']; ?></td>
+                        <td class="text-nowrap"><?= $subkrit['Nilai']; ?></td>
+                        <td class="text-center text-nowrap">
                             <a href="index.php?page=edit_subkriteria&edit=<?= $subkrit['ID_Sub']; ?>" class="btn btn-success btn-square rounded-0">
                                 <i class="fas fa-edit"></i>
                             </a>

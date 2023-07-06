@@ -58,7 +58,7 @@
         <!-- Outer Row -->
         <div class="row justify-content-center">
 
-            <div class="col-5">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
 
                 <div class="card o-hidden border-0 shadow rounded-0">
                     <div class="card-body p-0">
@@ -66,7 +66,7 @@
                         <div class="row">
                             <!-- <div class="col-lg-6 d-none d-lg-block bg-login-image"></div> -->
                             <div class="col">
-                                <div class="p-5">
+                                <div class="p-4 p-sm-5 p-md-5 p-lg-5 p-xl-5">
                                     <div class="text-center">
                                         <h1 class="h5 text-gray-800 mb-4">Admin Login</h1>
                                         <!-- <img src="assets/img/SMKN9_Bekasi.png" alt="" class="img-profile w-25"> -->
