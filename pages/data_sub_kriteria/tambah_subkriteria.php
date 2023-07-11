@@ -14,35 +14,6 @@
         data_subkriteria.ID_Kriteria = data_kriteria.ID_Kriteria WHERE Nama_Kriteria = '$krit'";
         $sub = mysqli_query($koneksi_db, $data_sub);
 
-        // fungsi simpan
-        if (isset($_POST['simpan'])) {
-            $idKriteria = $data['ID_Kriteria'];
-            $subkriteria = htmlspecialchars($_POST['sub_kriteria']);
-            $keterangan = htmlspecialchars($_POST['ket']);
-            $nilai = htmlspecialchars($_POST['nilai']);
-
-            $query = mysqli_query($koneksi_db, "SELECT Nama_Subkriteria, Keterangan, Nilai FROM 
-            data_subkriteria WHERE Nama_Subkriteria = '$subkriteria'");
-            $id = mysqli_num_rows($query);
-
-            // validasi input sub kriteria sudah ada atau belum
-            if ($id > 0) {
-                echo '<script>
-                    alert("Sub kriteria sudah ada!");
-                    document.location.href = "index.php?page=tambah_subkriteria&idkriteria='. $_GET['idkriteria'] .
-                    '&kriteria='. $_GET['kriteria'] .'";
-                </script>';
-            } else {
-                $sql = "INSERT INTO data_subkriteria VALUES ('', '$idKriteria', '$subkriteria', '$keterangan', '$nilai')";
-                mysqli_query($koneksi_db, $sql);
-
-                echo '<script>
-                    alert("Sub kriteria berhasil tersimpan!");
-                    document.location.href = "index.php?page=tambah_subkriteria&idkriteria='. $_GET['idkriteria'] .
-                    '&kriteria='. $_GET['kriteria'] .'";
-                </script>';
-            }
-        }
     } else {
         // setting blank index
         $id = '';
@@ -60,7 +31,6 @@
             </script>';
         }
     }
-
 ?>
 
 <!-- Page Heading -->
@@ -71,7 +41,7 @@
 <!-- DataTales Example -->
 <div class="card mb-4 rounded-0">
     <div class="card-body">
-        <form action="" method="post">
+        <form action="pages/data_sub_kriteria/proses_tambah_subkriteria.php?id=<?= $_GET['idkriteria']; ?>&nama=<?= $_GET['kriteria']; ?>" method="post">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Sub Kriteria</label>
                 <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="sub_kriteria" placeholder="Masukkan Nama Sub" required>
@@ -87,7 +57,7 @@
             <a href="index.php?page=sub_kriteria" class="btn btn-secondary btn-square rounded-0">
                 <i class="fas fa-chevron-left fa-sm"></i> Kembali
             </a>
-            <button type="submit" class="btn btn-success btn-square rounded-0" name="simpan">
+            <button type="submit" class="btn btn-success btn-square rounded-0">
                 <i class="fas fa-save fa-sm"></i> Simpan
             </button>
         </form>

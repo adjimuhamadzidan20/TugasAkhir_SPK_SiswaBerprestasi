@@ -47,11 +47,9 @@
         }
 
         echo '<script>
-            alert("Penilaian berhasil terubah!");
             document.location.href = "index.php?page=data_penilaian";
         </script>';
     }
-
 ?>
 
 <!-- DataTales Example -->
@@ -71,6 +69,7 @@
                     <!-- id_penilaian -->
                     <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="id_penilai[]" 
                     value="<?= $krit['ID_Penilaian']; ?>" readonly="readonly" hidden="hidden">
+
                     <!-- id_kriteria -->
                     <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="id_kriteria[]" 
                     value="<?= $krit['ID_Kriteria']; ?>" readonly="readonly" hidden="hidden">
@@ -89,8 +88,8 @@
 
                             while ($res = mysqli_fetch_assoc($datasub)) :
                           ?>  
-                            <option value="<?= $res['Nilai']; ?>"><?= $res['Nama_Subkriteria']; ?> - <?= $res['Nilai']; ?> - 
-                            <?= $res['Keterangan']; ?></option>
+                            <option value="<?= $res['Nilai']; ?>"><?= $res['Nama_Subkriteria']; ?> - <?= $res['Keterangan']; ?> -
+                            <?= $res['Nilai']; ?></option>
                           <?php endwhile; ?>
                         </select>
                     </div>

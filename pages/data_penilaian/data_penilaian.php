@@ -34,6 +34,7 @@
               <td class="text-nowrap"><?= 'A'. $no; ?></td>
               <td class="text-nowrap"><?= $alter['Nama_Siswa']; ?></td>
               <td class="text-center text-nowrap">
+
               	<?php  
               		$jmlData = mysqli_query($koneksi_db, "SELECT * FROM data_penilaian WHERE ID_Alter = '$alter[ID_Alter]'");
               		$jml = mysqli_num_rows($jmlData);
@@ -48,6 +49,7 @@
                   	<i class="fas fa-check fa-sm"></i> Penilaian Terinput
                   </button>
                 <?php } ?>  
+                
               </td>
               <td class="text-center text-nowrap">
               	<button type="button" data-siswa="<?= $alter['Nama_Siswa']; ?>" class="cek btn btn-success btn-square rounded-0" title="Lihat Penilaian">
@@ -88,6 +90,8 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<!-- fungsi untuk melihat penilaian -->
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('.cek').click(function() {

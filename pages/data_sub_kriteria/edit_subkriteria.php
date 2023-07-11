@@ -4,24 +4,6 @@
     data_subkriteria.Nama_Subkriteria, data_subkriteria.Keterangan, data_subkriteria.Nilai FROM data_subkriteria INNER JOIN 
     data_kriteria ON data_subkriteria.ID_Kriteria = data_kriteria.ID_Kriteria WHERE ID_Sub = '$idSub'");
     $dataSub = mysqli_fetch_assoc($sqlSub);
-
-    // fungsi edit
-    if (isset($_POST['edit'])) {
-        $idKriteria = htmlspecialchars($_POST['idkriteria']);
-        $subkriteria = htmlspecialchars($_POST['sub_kriteria']);
-        $keterangan = htmlspecialchars($_POST['ket']);
-        $nilai = htmlspecialchars($_POST['nilai']);
-
-        $sql = "UPDATE data_subkriteria SET ID_Kriteria = '$idKriteria', Nama_Subkriteria = '$subkriteria', 
-        Keterangan = '$keterangan', Nilai = '$nilai' WHERE ID_Sub = '$idSub'";
-        mysqli_query($koneksi_db, $sql);
-
-        echo '<script>
-            alert("Sub kriteria berhasil terubah!");
-            document.location.href = "index.php?page=sub_kriteria";
-        </script>';
-    }
-
 ?>
 
 <!-- Page Heading -->
@@ -32,7 +14,7 @@
 <!-- DataTales Example -->
 <div class="card mb-4 rounded-0">
     <div class="card-body">
-        <form action="" method="post">
+        <form action="pages/data_sub_kriteria/proses_edit_subkriteria.php?id=<?= $_GET['edit']; ?>" method="post">
             <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="idkriteria" 
             value="<?= $dataSub['ID_Kriteria']; ?>" hidden="hidden">
             <div class="mb-3">
@@ -53,7 +35,7 @@
             <a href="index.php?page=tambah_subkriteria&idkriteria=<?= $dataSub['ID_Kriteria']; ?>&kriteria=<?= $dataSub['Nama_Kriteria']; ?>" class="btn btn-secondary btn-square rounded-0">
                 <i class="fas fa-chevron-left fa-sm"></i> Kembali
             </a>
-            <button type="submit" class="btn btn-success btn-square rounded-0" name="edit">
+            <button type="submit" class="btn btn-success btn-square rounded-0">
                 <i class="fas fa-edit fa-sm"></i> Edit
             </button>
         </form>

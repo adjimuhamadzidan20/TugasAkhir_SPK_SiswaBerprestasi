@@ -4,8 +4,8 @@
 
 	// fungsi delete
 	if (isset($_GET['delete'])) {
-		$nisn = $_GET['delete'];
-		$sqlDel = "DELETE FROM data_alternatif WHERE NISN = '$nisn'";
+		$idAlt = $_GET['delete'];
+		$sqlDel = "DELETE FROM data_alternatif WHERE ID_Alter = '$idAlt'";
 		$query = mysqli_query($koneksi_db, $sqlDel);
 
 		echo '<script>
@@ -55,10 +55,10 @@
               <td class="text-nowrap"><?= $alter['JK']; ?></td>
               <td class="text-nowrap"><?= $alter['Kelas']; ?></td>
               <td class="text-center text-nowrap">
-              	<a href="index.php?page=edit_alter&edit=<?= $alter['NISN']; ?>&id=<?= $alter['ID_Alter']; ?>" class="btn btn-success btn-square rounded-0">
+              	<a href="index.php?page=edit_alter&edit=<?= $alter['ID_Alter']; ?>" class="btn btn-success btn-square rounded-0">
                     <i class="fas fa-edit"></i>
                 </a>
-                <a href="index.php?page=data_siswa&delete=<?= $alter['NISN']; ?>" class="btn btn-success btn-square rounded-0" onclick="return confirm('Hapus Alternatif?');">
+                <a href="index.php?page=data_siswa&delete=<?= $alter['ID_Alter']; ?>" class="btn btn-success btn-square rounded-0" onclick="return confirm('Hapus Alternatif?');">
                     <i class="fas fa-trash"></i>
                 </a>
               </td>

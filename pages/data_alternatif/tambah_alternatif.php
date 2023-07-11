@@ -39,7 +39,7 @@
         <h6 class="m-0 text-gray-800">Masukkan Data Alternatif Baru</h6>
     </div>
     <div class="card-body">
-        <form action="" method="post">
+        <form action="pages/data_alternatif/proses_tambah_alternatif.php" method="post">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">NISN</label>
                 <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="nisn" placeholder="Masukkan NISN" required>
@@ -92,7 +92,7 @@
             <a href="index.php?page=data_siswa" class="btn btn-secondary btn-square rounded-0">
                 <i class="fas fa-chevron-left fa-sm"></i> Kembali
             </a>
-            <button type="submit" class="btn btn-success btn-square rounded-0" name="simpan">
+            <button type="submit" class="btn btn-success btn-square rounded-0">
                 <i class="fas fa-save fa-sm"></i> Simpan
             </button>
         </form>

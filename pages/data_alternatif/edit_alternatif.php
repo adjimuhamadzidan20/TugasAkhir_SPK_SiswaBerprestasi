@@ -1,27 +1,9 @@
 <?php
     // menangkap data alternatif
-    $nisnSis = $_GET['edit'];
-    $sqlSis = "SELECT * FROM data_alternatif WHERE NISN = '$nisnSis'";
+    $idAlt = $_GET['edit'];
+    $sqlSis = "SELECT * FROM data_alternatif WHERE ID_Alter = '$idAlt'";
     $querySis = mysqli_query($koneksi_db, $sqlSis);
     $data = mysqli_fetch_assoc($querySis);
-
-    // fungsi edit
-    if (isset($_POST['edit'])) {
-        $nisn = htmlspecialchars($_POST['nisn']);
-        $siswa = htmlspecialchars($_POST['nama_siswa']);
-        $jk = htmlspecialchars($_POST['jenis_kelamin']);
-        $kelas = htmlspecialchars($_POST['kelas']);
-
-        $sql = "UPDATE data_alternatif SET NISN = '$nisn', Nama_Siswa = '$siswa', JK = '$jk', Kelas = '$kelas'
-        WHERE ID_Alter = '$_GET[id]'";
-        mysqli_query($koneksi_db, $sql);
-
-        echo '<script>
-            alert("Alternatif berhasil terubah!");
-            document.location.href = "index.php?page=data_siswa";
-        </script>';
-    }
-
 ?>
 
 <!-- Page Heading -->
@@ -35,7 +17,7 @@
         <h6 class="m-0 text-gray-800">Edit Data Alternatif</h6>
     </div>
     <div class="card-body">
-        <form action="" method="post">
+        <form action="pages/data_alternatif/proses_edit_alternatif.php?id=<?= $_GET['edit']; ?>" method="post">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">NISN</label>
                 <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="nisn" value="<?= $data['NISN']; ?>" required>
@@ -89,7 +71,7 @@
             <a href="index.php?page=data_siswa" class="btn btn-secondary btn-square rounded-0">
                 <i class="fas fa-chevron-left fa-sm"></i> Kembali
             </a>
-            <button type="submit" class="btn btn-success btn-square rounded-0" name="edit">
+            <button type="submit" class="btn btn-success btn-square rounded-0">
                 <i class="fas fa-edit fa-sm"></i> Edit
             </button>
         </form>

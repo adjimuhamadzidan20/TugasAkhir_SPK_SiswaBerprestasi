@@ -4,8 +4,8 @@
 
 	// fungsi delete
 	if (isset($_GET['delete'])) {
-		$namaKrit = $_GET['delete'];
-		$sqlDel = "DELETE FROM data_kriteria WHERE Nama_Kriteria = '$namaKrit'";
+		$idKrit = $_GET['delete'];
+		$sqlDel = "DELETE FROM data_kriteria WHERE ID_Kriteria = '$idKrit'";
 		$query = mysqli_query($koneksi_db, $sqlDel);
 		
 		echo '<script>
@@ -53,10 +53,10 @@
               <td class="text-nowrap"><?= $krit['Nilai_Bobot']; ?></td>
               <td class="text-nowrap"><?= $krit['Atribut']; ?></td>
               <td class="text-center text-nowrap">
-              	<a href="index.php?page=edit_kriteria&edit=<?= $krit['Nama_Kriteria']; ?>&id=<?= $krit['ID_Kriteria']; ?>" class="btn btn-success btn-square rounded-0" title="Edit Kriteria">
+              	<a href="index.php?page=edit_kriteria&edit=<?= $krit['ID_Kriteria']; ?>" class="btn btn-success btn-square rounded-0" title="Edit Kriteria">
                     <i class="fas fa-edit"></i>
                 </a>
-                <a href="index.php?page=data_kriteria&delete=<?= $krit['Nama_Kriteria']; ?>" class="btn btn-success btn-square rounded-0" title="Hapus Kriteria" onclick="return confirm('Hapus Kriteria?');">
+                <a href="index.php?page=data_kriteria&delete=<?= $krit['ID_Kriteria']; ?>" class="btn btn-success btn-square rounded-0" title="Hapus Kriteria" onclick="return confirm('Hapus Kriteria?');">
                     <i class="fas fa-trash"></i>
                 </a>
               </td>

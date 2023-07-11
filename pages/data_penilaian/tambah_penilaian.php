@@ -1,49 +1,19 @@
 <?php
-    // menangkap data alternatif sesuai nama siswa
-    $namaSiswa = "SELECT * FROM data_alternatif WHERE ID_Alter = '$_GET[penilaian]'";
-    $rendSiswa = mysqli_query($koneksi_db, $namaSiswa);
-    $res = mysqli_fetch_assoc($rendSiswa);
-
     // nama kriteria
     $namaKriteria = "SELECT Nama_Kriteria FROM data_kriteria";
     $rendKriteria = mysqli_query($koneksi_db, $namaKriteria);
 
-    // id kriteria
-    $querykrit = "SELECT ID_Kriteria FROM data_kriteria";
-    $hasil = mysqli_query($koneksi_db, $querykrit);
+    // menangkap data alternatif sesuai nama siswa
+    $idAlt = $_GET['penilaian'];
+    $namaSiswa = "SELECT * FROM data_alternatif WHERE ID_Alter = '$idAlt'";
+    $rendSiswa = mysqli_query($koneksi_db, $namaSiswa);
+    $res = mysqli_fetch_assoc($rendSiswa);
 
-    // memasukan semua data id kriteria ke array
-    $row = [];
-    while ($resKrit = mysqli_fetch_assoc($hasil)) {
-        $row[] = $resKrit['ID_Kriteria'];
-    }
-  
     // jumlah data kriteria  
     $cekJuml = "SELECT COUNT(ID_Kriteria) FROM data_kriteria";
     $total = mysqli_query($koneksi_db, $cekJuml);
     $tes = mysqli_fetch_row($total);
     $jumlah = $tes[0];
-    
-    // fungsi simpan
-    if (isset($_POST['simpan'])) {
-        $i = 1;
-        while ($i <= $jumlah) {
-            $alternatif = $res['ID_Alter'];
-            $kriteria = $row[$i-1];
-            $nilai = htmlspecialchars($_POST['nilai'][$i-1]);
-
-            $sql = "INSERT INTO data_penilaian VALUES ('', '$alternatif', '$kriteria', '$nilai')";
-            $tes = mysqli_query($koneksi_db, $sql);
-
-            $i++;
-        }
-
-        echo '<script>
-            alert("Penilaian berhasil tersimpan!");
-            document.location.href = "index.php?page=data_penilaian";
-        </script>';
-    }
-
 ?>
 
 <!-- Page Heading -->
@@ -57,7 +27,7 @@
         <h6 class="m-0 text-gray-800">Tambah Penilaian</h6>
     </div>
     <div class="card-body">
-        <form action="" method="post">
+        <form action="pages/data_penilaian/proses_tambah_penilaian.php?id=<?= $_GET['penilaian']; ?>" method="post">
             <?php
                 $i = 1;  
                 while ($i <= $jumlah) :   
@@ -79,8 +49,9 @@
 
                             while ($res = mysqli_fetch_assoc($datasub)) :
                           ?>  
-                            <option value="<?= $res['Nilai']; ?>"><?= $res['Nama_Subkriteria']; ?> - <?= $res['Nilai']; ?> - 
-                            <?= $res['Keterangan']; ?></option>
+                            <option value="<?= $res['Nilai']; ?>"><?= $res['Nama_Subkriteria']; ?> - <?= $res['Keterangan']; ?> - 
+                            <?= $res['Nilai']; ?>
+                            </option>
                           <?php endwhile; ?>
                         </select>
                     </div>
@@ -92,7 +63,7 @@
             <a href="index.php?page=data_penilaian" class="btn btn-secondary btn-square rounded-0">
                 <i class="fas fa-chevron-left fa-sm"></i> Kembali
             </a>
-            <button type="submit" class="btn btn-success btn-square rounded-0" name="simpan">
+            <button type="submit" class="btn btn-success btn-square rounded-0">
                 <i class="fas fa-save fa-sm"></i> Simpan
             </button>
         </form>

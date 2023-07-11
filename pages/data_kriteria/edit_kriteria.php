@@ -1,25 +1,9 @@
 <?php
     // mengambil data kriteria 
-    $namaKrit = $_GET['edit']; 
-    $sqlEdit = "SELECT * FROM data_kriteria WHERE Nama_Kriteria = '$namaKrit'";
+    $idKrit = $_GET['edit']; 
+    $sqlEdit = "SELECT * FROM data_kriteria WHERE ID_Kriteria = '$idKrit'";
     $queryEdit = mysqli_query($koneksi_db, $sqlEdit);
     $data = mysqli_fetch_assoc($queryEdit);
-
-    // fungsi edit
-    if (isset($_POST['edit'])) {
-    $kriteria = htmlspecialchars($_POST['nama_kriteria']);
-    $bobot = htmlspecialchars($_POST['bobot']);
-    $atribut = htmlspecialchars($_POST['atribut']);
-
-    $sql = "UPDATE data_kriteria SET Nama_Kriteria = '$kriteria', Nilai_Bobot = '$bobot', Atribut = '$atribut'
-    WHERE ID_Kriteria = '$_GET[id]'";
-    mysqli_query($koneksi_db, $sql);
-
-    echo '<script>
-        alert("Kriteria berhasil terubah!");
-        document.location.href = "index.php?page=data_kriteria";
-    </script>';
-    }
 ?>
 
 <!-- Page Heading -->
@@ -33,7 +17,7 @@
         <h6 class="m-0 text-gray-800">Edit Data Kriteria</h6>
     </div>
     <div class="card-body">
-        <form action="" method="post">
+        <form action="pages/data_kriteria/proses_edit_kriteria.php?id=<?= $_GET['edit']; ?>" method="post">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Nama Kriteria</label>
                 <input type="text" class="form-control rounded-0" id="exampleFormControlInput1" name="nama_kriteria" 
@@ -55,7 +39,7 @@
             <a href="index.php?page=data_kriteria" class="btn btn-secondary btn-square rounded-0">
                 <i class="fas fa-chevron-left fa-sm"></i> Kembali
             </a>
-            <button type="submit" class="btn btn-success btn-square rounded-0" name="edit">
+            <button type="submit" class="btn btn-success btn-square rounded-0">
                 <i class="fas fa-edit fa-sm"></i> Edit
             </button>
         </form>
