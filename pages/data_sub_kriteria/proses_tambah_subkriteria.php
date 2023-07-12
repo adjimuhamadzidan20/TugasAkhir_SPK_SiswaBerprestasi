@@ -1,4 +1,5 @@
 <?php  
+  session_start();
 	require '../../config/connect_db.php';
 
 	// proses tambah
@@ -21,14 +22,25 @@
 
   // validasi input sub kriteria sudah ada atau belum
   if ($idsub > 0) {
+    $_SESSION['pesan'] = 'Nama subkriteria sudah ada!';
+    $_SESSION['status'] = 'warning';
 		header('Location: ../../index.php?page=tambah_subkriteria&idkriteria='. $id .'&kriteria='. $krit .'');
 		exit;
   } else {
     $sql = "INSERT INTO data_subkriteria VALUES ('', '$idKriteria', '$subkriteria', '$keterangan', '$nilai')";
-    mysqli_query($koneksi_db, $sql);
+    $send = mysqli_query($koneksi_db, $sql);
 
-    header('Location: ../../index.php?page=tambah_subkriteria&idkriteria='. $id .'&kriteria='. $krit .'');
-    exit;
+    if ($send) {
+      $_SESSION['pesan'] = 'Subkriteria berhasil tersimpan!';
+      $_SESSION['status'] = 'success';
+      header('Location: ../../index.php?page=tambah_subkriteria&idkriteria='. $id .'&kriteria='. $krit .'');
+      exit;  
+    } else {
+      $_SESSION['pesan'] = 'Subkriteria gagal tersimpan!';
+      $_SESSION['status'] = 'danger';
+      header('Location: ../../index.php?page=tambah_subkriteria&idkriteria='. $id .'&kriteria='. $krit .'');
+      exit;
+    }
   }
 
 ?>

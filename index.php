@@ -178,6 +178,19 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    <script type="text/javascript">
+        let popup = document.getElementById('notif');
+        if (popup.style.display = 'block') {
+            setTimeout(function() {
+                popup.style.opacity = '0'
+                popup.style.transition = 'opacity 1s ease-in-out';
+                setTimeout(function() {
+                    popup.style.display = 'none';
+                }, 1000)
+            }, 1500);
+        }
+    </script>
+
 </body>
 
 </html>

@@ -3,6 +3,19 @@
   <h1 class="h3 text-gray-800">Hasil Perhitungan</h1>
 </div>
 
+<!-- popup status -->
+<?php  
+  if (isset($_SESSION['pesan']) && isset($_SESSION['status'])) :
+?>
+  <div class="alert alert-<?= $_SESSION['status']; ?> rounded-0" role="alert" id="notif">
+    <?= $_SESSION['pesan']; ?>
+  </div>
+<?php  
+  unset($_SESSION['pesan']);
+  unset($_SESSION['status']);
+  endif;
+?>
+
 <nav aria-label="...">
   <ul class="pagination pagination-md flex-wrap flex-md-nowrap">
     <li class="page-item w-100" aria-current="page">

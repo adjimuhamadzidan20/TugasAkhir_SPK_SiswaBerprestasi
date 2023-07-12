@@ -8,6 +8,19 @@
   <h1 class="h3 text-gray-800">Penilaian Awal</h1>
 </div>
 
+<!-- popup status -->
+<?php  
+  if (isset($_SESSION['pesan']) && isset($_SESSION['status'])) :
+?>
+  <div class="alert alert-<?= $_SESSION['status']; ?> rounded-0" role="alert" id="notif">
+    <?= $_SESSION['pesan']; ?>
+  </div>
+<?php  
+  unset($_SESSION['pesan']);
+  unset($_SESSION['status']);
+  endif;
+?>
+
 <!-- DataTales Example -->
 <div class="card mb-4 rounded-0">
   <div class="card-header bg-white py-3 d-flex align-items-center justify-content-between">

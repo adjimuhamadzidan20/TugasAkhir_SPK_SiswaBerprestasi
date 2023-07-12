@@ -1,4 +1,5 @@
-<?php  
+<?php
+  session_start();  
 	require '../../config/connect_db.php';
 
 	// proses tambah
@@ -31,12 +32,21 @@
     $nilai = htmlspecialchars($_POST['nilai'][$i-1]);
 
     $sql = "INSERT INTO data_penilaian VALUES ('', '$alternatif', '$kriteria', '$nilai')";
-    mysqli_query($koneksi_db, $sql);
+    $send = mysqli_query($koneksi_db, $sql);
 
     $i++;
   }
 
-  header('Location: ../../index.php?page=data_penilaian');
-  exit;
+  if ($send) {
+    $_SESSION['pesan'] = 'Penilaian berhasil ditambahkan!';
+    $_SESSION['status'] = 'success';
+    header('Location: ../../index.php?page=data_penilaian');
+    exit;
+  } else {
+    $_SESSION['pesan'] = 'Penilaian gagal ditambahkan!';
+    $_SESSION['status'] = 'danger';
+    header('Location: ../../index.php?page=data_penilaian');
+    exit;
+  }
  
 ?>

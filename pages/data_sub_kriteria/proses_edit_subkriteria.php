@@ -1,4 +1,5 @@
 <?php
+  session_start();
 	require '../../config/connect_db.php';
 
 	// proses edit
@@ -10,9 +11,18 @@
 
   $sql = "UPDATE data_subkriteria SET ID_Kriteria = '$idKriteria', Nama_Subkriteria = '$subkriteria', 
   Keterangan = '$keterangan', Nilai = '$nilai' WHERE ID_Sub = '$idsub'";
-  mysqli_query($koneksi_db, $sql);
+  $send = mysqli_query($koneksi_db, $sql);
 
-  header('Location: ../../index.php?page=sub_kriteria');
-  exit;
+  if ($send) {
+    $_SESSION['pesan'] = 'Subkriteria berhasil terubah!';
+    $_SESSION['status'] = 'success';
+    header('Location: ../../index.php?page=sub_kriteria');
+    exit;
+  } else {
+    $_SESSION['pesan'] = 'Subkriteria gagal terubah!';
+    $_SESSION['status'] = 'danger';
+    header('Location: ../../index.php?page=sub_kriteria');
+    exit;
+  }
 
 ?>

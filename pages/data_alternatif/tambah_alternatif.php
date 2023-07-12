@@ -1,37 +1,20 @@
-<?php
-    // fungsi simpan
-    if (isset($_POST['simpan'])) {
-        $nisn = htmlspecialchars($_POST['nisn']);
-        $siswa = htmlspecialchars($_POST['nama_siswa']);
-        $jk = htmlspecialchars($_POST['jenis_kelamin']);
-        $kelas = htmlspecialchars($_POST['kelas']);
-
-        $query = mysqli_query($koneksi_db, "SELECT NISN FROM data_alternatif WHERE NISN = '$nisn'");
-        $nisnSiswa = mysqli_num_rows($query);
-
-        // validasi input alternatif sudah ada atau belum
-        if ($nisnSiswa > 0) {
-            echo '<script>
-                alert("NISN siswa sudah ada!");
-                document.location.href = "index.php?page=tambah_alter";
-            </script>';
-        } else {
-            $sql = "INSERT INTO data_alternatif VALUES ('', '$nisn', '$siswa', '$jk', '$kelas')";
-            mysqli_query($koneksi_db, $sql);
-
-            echo '<script>
-                alert("Alternatif berhasil tersimpan!");
-                document.location.href = "index.php?page=data_siswa";
-            </script>';
-        }
-    }
-
-?>
-
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-1">
   <h1 class="h3 text-gray-800">Tambah Alternatif</h1>
 </div>
+
+<!-- popup status -->
+<?php  
+    if (isset($_SESSION['pesan']) && isset($_SESSION['status'])) :
+?>
+    <div class="alert alert-<?= $_SESSION['status']; ?> rounded-0" role="alert" id="notif">
+      <?= $_SESSION['pesan']; ?>
+    </div>
+<?php  
+    unset($_SESSION['pesan']);
+    unset($_SESSION['status']);
+    endif;
+?>
 
 <!-- DataTales Example -->
 <div class="card mb-4 rounded-0">

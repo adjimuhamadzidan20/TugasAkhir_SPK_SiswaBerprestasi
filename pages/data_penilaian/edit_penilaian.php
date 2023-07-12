@@ -41,14 +41,24 @@
 
             $sql = "UPDATE data_penilaian SET ID_Alter = '$idalternatif', ID_Kriteria = '$idkriteria', Nilai = '$nilai'
             WHERE ID_Penilaian = '$idPenilaian'";
-            $tes = mysqli_query($koneksi_db, $sql);
+            $send = mysqli_query($koneksi_db, $sql);
 
             $i++;
         }
 
-        echo '<script>
-            document.location.href = "index.php?page=data_penilaian";
-        </script>';
+        if ($send) {
+            $_SESSION['pesan'] = 'Penilaian berhasil terubah!';
+            $_SESSION['status'] = 'success';
+            echo '<script>
+                document.location.href = "index.php?page=data_penilaian";
+            </script>';
+        } else {
+            $_SESSION['pesan'] = 'Penilaian gagal terubah!';
+            $_SESSION['status'] = 'danger';
+            echo '<script>
+                document.location.href = "index.php?page=data_penilaian";
+            </script>';
+        }
     }
 ?>
 

@@ -1,4 +1,5 @@
 <?php
+  session_start();
 	require '../../config/connect_db.php';
 
 	// proses tambah
@@ -12,13 +13,23 @@
 
   // validasi input alternatif sudah ada atau belum
   if ($nisnSiswa > 0) {
+    $_SESSION['pesan'] = 'NISN sudah ada!';
+    $_SESSION['status'] = 'warning';
 		header('Location: ../../index.php?page=tambah_alter');
     exit;
   } else {
     $sql = "INSERT INTO data_alternatif VALUES ('', '$nisn', '$siswa', '$jk', '$kelas')";
-    mysqli_query($koneksi_db, $sql);
+    $send = mysqli_query($koneksi_db, $sql);
 
-    header('Location: ../../index.php?page=data_siswa');
-    exit;
+    if ($send) {
+      $_SESSION['pesan'] = 'Alternatif berhasil tersimpan!';
+      $_SESSION['status'] = 'success';
+      header('Location: ../../index.php?page=data_siswa');
+      exit;
+    } else {
+      $_SESSION['pesan'] = 'Alternatif gagal tersimpan!';
+      $_SESSION['status'] = 'danger';
+      header('Location: ../../index.php?page=data_siswa');
+    }
   }
 ?>
