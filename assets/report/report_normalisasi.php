@@ -55,7 +55,7 @@
 					 	<br><br>
 					 	<p>Admin</p>
 					</div>';
-     
+
 	$mpdf->SetTitle('Laporan Normalisasi');
 	$mpdf->WriteHTML($header);
 	$mpdf->WriteHTML($subhead);

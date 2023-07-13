@@ -16,8 +16,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="adjimuhamadzidan">
     <link rel="icon" type="image/x-icon" href="assets/img/SMKN9_Bekasi.ico">
 
     <title>SPK Siswa Berprestasi - Dashboard</title>
@@ -35,23 +34,27 @@
     <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
     <style type="text/css">
+        * {
+            font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+        }
+
         .sidebar {
-            background-color: #018ED6;
+            background-color: #01a3a4;
         }
 
         .pagination .active .page-link {
-            background-color: #018ED6;
-            border-color: #018ED6;
+            background-color: #01a3a4;
+            border-color: #01a3a4;
         }
 
         .btn-success {
-            background-color: #018ED6;
-            border-color: #018ED6;
+            background-color: #01a3a4;
+            border-color: #01a3a4;
         }
 
         .btn-success:hover {
-            background-color: #0080C2;
-            border-color: #0080C2;
+            background-color: #019394;
+            border-color: #019394;
         }
         
     </style>
@@ -187,7 +190,7 @@
                 setTimeout(function() {
                     popup.style.display = 'none';
                 }, 1000)
-            }, 1500);
+            }, 1000);
         }
     </script>
 

@@ -1,8 +1,9 @@
-<?php  
+<?php
+	// koneksi database  
 	$host 		= 'localhost';
 	$username = 'root';
 	$password = '';
-	$database = 'spksiswaberprestasi';
+	$database = 'spksiswaprestasi';
 	
 	$koneksi_db = mysqli_connect($host, $username, $password, $database);
 	

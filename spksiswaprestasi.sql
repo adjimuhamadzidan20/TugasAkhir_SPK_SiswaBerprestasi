@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 22 Jun 2023 pada 19.10
+-- Waktu pembuatan: 13 Jul 2023 pada 17.55
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 7.4.13
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `spksiswaberprestasi`
+-- Database: `spksiswaprestasi`
 --
 
 -- --------------------------------------------------------
@@ -32,6 +32,13 @@ CREATE TABLE `admin` (
   `username` varchar(125) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `admin`
+--
+
+INSERT INTO `admin` (`ID_User`, `username`, `password`) VALUES
+(1, 'adminsekolah', 'c5a9c89e63451dfcd9f6b6d07f4c9fd0');
 
 -- --------------------------------------------------------
 
@@ -288,7 +295,7 @@ ALTER TABLE `hasil_preferensi`
 -- AUTO_INCREMENT untuk tabel `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `ID_User` int(15) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_User` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `data_alternatif`

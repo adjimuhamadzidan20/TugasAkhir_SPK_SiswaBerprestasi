@@ -16,8 +16,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="adjimuhamadzidan">
     <link rel="icon" type="image/x-icon" href="assets/img/SMKN9_Bekasi.ico">
 
     <title>SPK Siswa Berprestasi - Login</title>
@@ -32,18 +31,28 @@
     <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
 
     <style type="text/css">
+       /* body {
+            background-image: url(assets/img/background.jpg);
+            background-size: cover;
+            background-position: center;
+        }*/
+
+        * {
+            font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+        }
+
         .container {
             margin-top: 86px;
         }
         
         .btn-success {
-            background-color: #018ED6;
-            border-color: #018ED6;
+            background-color: #01a3a4;
+            border-color: #01a3a4;
         }
 
         .btn-success:hover {
-            background-color: #0080C2;
-            border-color: #0080C2;
+            background-color: #019394;
+            border-color: #019394;
         }
 
     </style>
@@ -73,13 +82,15 @@
                                     </div>
 
                                     <?php 
-                                        if (isset($_SESSION['status'])) {
-                                            echo '<div class="alert alert-danger rounded-0 small" role="alert">'
-                                                    . $_SESSION['status'] .
-                                                  '</div>';
-                                            unset($_SESSION['status']);
-                                        }  
+                                        if (isset($_SESSION['status'])) :
                                     ?>
+                                        <div class="alert alert-danger rounded-0 small" role="alert" id="notif">
+                                            <?= $_SESSION['status']; ?>
+                                        </div>
+                                    <?php  
+                                        unset($_SESSION['status']);
+                                        endif;
+                                    ?>  
 
                                     <form class="user" method="post" action="config/proses_login.php">
                                         <div class="form-group">
@@ -102,20 +113,7 @@
                                             <i class="fas fa-sign-in-alt fa-fw"></i> Masuk
                                         </button>
                                         <hr>
-                                       <!--  <a href="index.html" class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Login with Google
-                                        </a>
-                                        <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                            <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                                        </a> -->
                                     </form>
-                                    <!-- <hr> -->
-                                    <!-- <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="small" href="register.html">Create an Account!</a>
-                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -137,6 +135,19 @@
 
     <!-- Custom scripts for all pages-->
     <script src="assets/js/sb-admin-2.min.js"></script>
+
+    <script type="text/javascript">
+        let popup = document.getElementById('notif');
+        if (popup.style.display = 'block') {
+            setTimeout(function() {
+                popup.style.opacity = '0'
+                popup.style.transition = 'opacity 1s ease-in-out';
+                setTimeout(function() {
+                    popup.style.display = 'none';
+                }, 1000)
+            }, 1000);
+        }
+    </script>
 
 </body>
 
