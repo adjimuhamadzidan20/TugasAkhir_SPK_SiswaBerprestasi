@@ -6,7 +6,7 @@
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-  <h5 class="mb-3 text-gray-800 my-sm-auto">Laporan Hasil Perankingan</h5>
+  <h5 class="mb-3 text-gray-800 my-sm-auto">Cetak Hasil Perankingan</h5>
   <a href="assets/report/report_perankingan.php" class="d-inline-block btn btn-sm btn-success rounded-0" target="_blank">
   	<i class="fas fa-file-pdf fa-sm"></i> Cetak Laporan
 	</a>
@@ -16,9 +16,10 @@
 <div class="card mb-4 rounded-0">
 	<div class="card-body">
     <div class="table-responsive">
-      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+      <table class="table table-bordered" width="100%" cellspacing="0">
         <thead>
           <tr>
+          	<th class="text-nowrap">No</th>
         		<th class="text-nowrap">NISN</th>
             <th class="text-nowrap">Nama Siswa</th>
             <th class="text-nowrap">Kelas</th>
@@ -33,6 +34,7 @@
       			$no++;	
       		?>
             <tr>
+            	<td class="text-nowrap"><?= $no; ?></td>
           		<td class="text-nowrap"><?= $res['NISN']; ?></td>
               <td class="text-nowrap"><?= $res['Nama_Siswa']; ?></td>
               <td class="text-nowrap"><?= $res['Kelas']; ?></td>

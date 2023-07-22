@@ -3,6 +3,11 @@
 
 	require_once __DIR__ . '../../../vendor/autoload.php';
 
+	// format tgl indonesia
+	setlocale(LC_ALL, 'id-ID', 'id_ID');
+	$tgl1 = strftime("%A, %d %B %Y | %T");
+	$tgl2 = strftime("%d %B %Y");
+
 	$normali = mysqli_query($koneksi_db, "SELECT Nama_Kriteria FROM data_kriteria");
   $siswa = mysqli_query($koneksi_db, "SELECT ID_Alter, NISN, Nama_Siswa FROM data_alternatif");
 
@@ -17,7 +22,7 @@
 
 	$subhead = '<div style="font-family: sans-serif;">
 								<p style="font-weight: bold;">Hasil Normalisasi</p>
-								<p style="font-size: 12px;">'.date ("F j, Y, g:i a").'</p>
+								<p style="font-size: 12px;">'. $tgl1 .'</p>
 							</div>';
 	
 	$tabel = '<table border="1" width="100%" cellspacing="0" cellpadding="4" style="font-size: 11px; font-family: sans-serif;">
@@ -51,7 +56,7 @@
 	        </table>';
 
 	$date = '<div style="text-align: right; margin-top:50px; font-family: sans-serif;">
-					 	<p>Kota Bekasi, '. date("d F Y") .'</p>
+					 	<p>Kota Bekasi, '. $tgl2 .'</p>
 					 	<br><br>
 					 	<p>Admin</p>
 					</div>';

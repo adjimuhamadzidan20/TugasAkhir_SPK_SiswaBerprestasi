@@ -1,7 +1,7 @@
 <?php
 	// koneksi db  
 	require 'connect_db.php';
-	// error_reporting(E_ERROR | E_WARNING);
+	error_reporting(E_ERROR | E_WARNING);
 
 	if (isset($_GET['page'])) {
 		$pages = $_GET['page'];

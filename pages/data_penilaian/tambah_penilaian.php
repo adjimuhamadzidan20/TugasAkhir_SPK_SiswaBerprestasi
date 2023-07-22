@@ -18,7 +18,7 @@
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-1">
-  <h1 class="h3 text-gray-800"><?= $res['Nama_Siswa']; ?></h1>
+  <h1 class="h3 text-gray-800">Nama Siswa : <?= $res['Nama_Siswa']; ?></h1>
 </div>
 
 <!-- DataTales Example -->
