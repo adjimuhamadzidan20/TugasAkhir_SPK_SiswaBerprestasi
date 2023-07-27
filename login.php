@@ -31,18 +31,13 @@
     <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
 
     <style type="text/css">
-       /* body {
-            background-image: url(assets/img/background.jpg);
-            background-size: cover;
-            background-position: center;
-        }*/
-
         * {
             font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
         }
 
         .container {
-            margin-top: 86px;
+            margin-top: 6rem;
+            margin-bottom: 5rem;
         }
         
         .btn-success {

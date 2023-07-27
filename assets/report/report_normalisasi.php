@@ -14,8 +14,8 @@
 	$mpdf = new \Mpdf\Mpdf();
 	$mpdf->debug = false;
 
-	$header = '<div class="head" style="border-bottom: 2px solid black; font-family: sans-serif;">	
-							<img src="../img/SMKN9_Bekasi.png" alt="" width="100" height="100" style="float: left; margin-right: 15px;">
+	$header = '<div class="head" style="border-bottom: 5px double black; font-family: sans-serif;">	
+							<img src="../img/SMKN9_Bekasi.png" width="100" height="100" style="float: left; margin-right: 15px;">
 							<h3 style="float: right; padding-top: 15px;">Laporan Hasil Normalisasi<br>SPK Penentuan Siswa Berprestasi<br>
 							SMK Negeri 9 Kota Bekasi</h3>
 						</div>'; 
@@ -57,8 +57,9 @@
 
 	$date = '<div style="text-align: right; margin-top:50px; font-family: sans-serif;">
 					 	<p>Kota Bekasi, '. $tgl2 .'</p>
+					 	<p style="margin-right: 60px;">Admin</p>
 					 	<br><br>
-					 	<p>Admin</p>
+					 	<p style="margin-right: 12px;">..................................</p>
 					</div>';
 
 	$mpdf->SetTitle('Laporan Normalisasi');
