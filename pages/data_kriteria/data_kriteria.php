@@ -55,12 +55,12 @@
         </thead>
         <tbody>
       		<?php  
-      			$kode = 0;
+      			$no = 0;
       			while ($krit = mysqli_fetch_assoc($kriteria)) :
-      			$kode++;
+      			$no++;
       		?>
             <tr>
-              <td class="text-nowrap"><?= 'C'. $kode; ?></td>
+              <td class="text-nowrap"><?= 'C'. $kode = str_pad($no, 2, '0', STR_PAD_LEFT); ?></td>
               <td class="text-nowrap"><?= $krit['Nama_Kriteria']; ?></td>
               <td class="text-nowrap"><?= $krit['Nilai_Bobot']; ?></td>
               <td class="text-nowrap"><?= $krit['Atribut']; ?></td>

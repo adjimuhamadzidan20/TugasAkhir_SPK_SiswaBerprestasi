@@ -56,12 +56,12 @@
         </thead>
         <tbody>
       		<?php 
-      			$kode = 0;
+      			$no = 0;
       			while ($alter = mysqli_fetch_assoc($siswa)) :	
-      			$kode++;
+      			$no++;
       		?>
             <tr>
-              <td class="text-nowrap"><?= 'A'. $kode; ?></td>
+              <td class="text-nowrap"><?= 'A'. $kode = str_pad($no, 2, '0', STR_PAD_LEFT); ?></td>
               <td class="text-nowrap"><?= $alter['NISN']; ?></td>
               <td class="text-nowrap"><?= $alter['Nama_Siswa']; ?></td>
               <td class="text-nowrap"><?= $alter['JK']; ?></td>

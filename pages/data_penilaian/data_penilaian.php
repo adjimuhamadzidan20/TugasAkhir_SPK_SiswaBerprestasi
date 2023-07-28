@@ -44,7 +44,7 @@
       			$no++;	
       		?>
             <tr>
-              <td class="text-nowrap"><?= 'A'. $no; ?></td>
+              <td class="text-nowrap"><?= 'A'. $kode = str_pad($no, 2, '0', STR_PAD_LEFT); ?></td>
               <td class="text-nowrap"><?= $alter['Nama_Siswa']; ?></td>
               <td class="text-center text-nowrap">
 
