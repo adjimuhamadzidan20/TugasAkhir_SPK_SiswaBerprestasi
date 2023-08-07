@@ -43,7 +43,7 @@
       			$no++;
       		?>
 	          <tr>
-	            <td class="text-nowrap"><?= 'C'. $no; ?></td>
+	            <td class="text-nowrap"><?= 'C'. $kode = str_pad($no, 2, '0', STR_PAD_LEFT); ?></td>
 	            <td class="text-nowrap"><?= $krit['Nama_Kriteria']; ?></td>
 	            <td class="text-center text-nowrap">
 	            	<a href="index.php?page=tambah_subkriteria&idkriteria=<?= $krit['ID_Kriteria']; ?>&kriteria=<?= $krit['Nama_Kriteria']; ?>" class="btn btn-success btn-square rounded-0">

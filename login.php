@@ -35,6 +35,24 @@
             font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
         }
 
+        .bg-login-image {
+            background-image: url(assets/img/background.jpg);
+        }
+
+        .logo {
+            width: 5rem;
+            height: 5rem;
+        }
+
+        span {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        h5 {
+            font-weight: 600;
+        }
+
         .container {
             margin-top: 6rem;
             margin-bottom: 5rem;
@@ -57,22 +75,33 @@
 <body class="bg-gradient-white">
 
     <div class="container">
-        <h4 class="text-dark text-center mb-2 text-uppercase">SPK Penentuan Siswa Berprestasi</h4>
 
         <!-- Outer Row -->
         <div class="row justify-content-center">
 
-            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="col-xl-10 col-lg-12 col-md-9">
 
                 <div class="card o-hidden border-0 shadow rounded-0">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <!-- <div class="col-lg-6 d-none d-lg-block bg-login-image"></div> -->
-                            <div class="col">
+                            <div class="col-lg-6 d-none d-lg-flex bg-login-image align-items-center justify-content-center">
+                                <div class="row justify-content-center">
+                                    <div class="col-3 d-flex justify-content-center align-items-center p-0">
+                                      <img src="assets/img/SMKN9_Bekasi.png" alt="SMKN9_Bekasi" title="SMKN9_Bekasi" class="logo">  
+                                    </div>
+                                    <div class="col-8 d-flex align-items-center p-0">
+                                      <h5 class="text-white text-uppercase"><span>Sistem Penunjang Keputusan</span><br>Penentuan Siswa Berprestasi</h5>  
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
                                 <div class="p-4 p-sm-5 p-md-5 p-lg-5 p-xl-5">
                                     <div class="text-center">
-                                        <h1 class="h5 text-gray-800 mb-4">Admin Login</h1>
+                                        <img src="assets/img/SMKN9_Bekasi.png" alt="SMKN9_Bekasi" title="SMKN9_Bekasi" class="logo d-lg-none mb-2">
+                                        <h5 class="text-gray-800 text-uppercase mb-4 d-lg-none"><span>Sistem Penunjang Keputusan</span><br>Penentuan Siswa Berprestasi</h5>
+                                        <p class="h6 text-gray-800 mb-4 d-lg-none">Admin Login</p>
+                                        <p class="h5 text-gray-800 mb-4 d-lg-block d-none">Admin Login</p>
                                         <!-- <img src="assets/img/SMKN9_Bekasi.png" alt="" class="img-profile w-25"> -->
                                     </div>
 
